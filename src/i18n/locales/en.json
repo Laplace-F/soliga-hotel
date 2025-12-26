@@ -1,0 +1,112 @@
+{
+  "faq": {
+    "label": "GUEST INFORMATION",
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What are the check-in and check-out times?",
+        "answer": "Check-in starts at 2:00 PM, and check-out is until 12:00 PM. Early check-in or late check-out may be arranged upon availability."
+      },
+      {
+        "question": "Do you provide airport transfer services?",
+        "answer": "Yes, Soliga Hotel offers private airport transfer services. Please contact our concierge for further arrangements."
+      },
+      {
+        "question": "Is breakfast included in the room rate?",
+        "answer": "Yes, all room reservations include a complimentary gourmet breakfast served daily."
+      },
+      {
+        "question": "Are pets allowed at the hotel?",
+        "answer": "For the comfort of all guests, pets are not permitted at Soliga Hotel."
+      },
+      {
+        "question": "What wellness facilities are available?",
+        "answer": "Our wellness facilities include a luxury spa, fitness center, yoga pavilion, and personalized wellness programs."
+      }
+    ]
+  },
+
+
+  "booking": {
+    "roomType": "Room Type",
+    "checkIn": "Check In",
+    "checkOut": "Check Out",
+    "rooms": "Rooms",
+    "button": "Check Availability",
+    "errorEmpty": "Please complete all required fields.",
+    "errorDate": "Check-out date must be after check-in.",
+    "roomOptions": {
+      "deluxe": "Deluxe Room",
+      "executive": "Executive Room",
+      "suite": "Suite",
+      "family": "Family Room"
+    }
+  },
+  "footer": {
+    "description": "Where luxury meets serenity. Experience the art of refined hospitality in our world-class sanctuary.",
+    "explore": {
+      "title": "Explore",
+      "story": "Our Story",
+      "accommodations": "Accommodations",
+      "dining": "Dining",
+      "spa": "Spa & Wellness",
+      "experiences": "Experiences"
+    },
+    "contact": {
+      "title": "Contact",
+      "address": {
+         "line1": "Jalan Pangeran Diponegoro No 432,",
+        "line2": "Gunungsitoli, Nias Island, North Sumatera, Indonesia"
+      },
+      "phone": "+62 813-7029-1919",
+      "email": "hotelsoliganias@gmail.com"
+    },
+    "hours": {
+      "title": "Hours",
+      "reception": "Reception",
+      "receptionTime": "24/7",
+      "restaurant": "Restaurant",
+      "restaurantTime": "6am - 11pm",
+      "spa": "Spa",
+      "spaTime": "9am - 9pm",
+      "pool": "Pool",
+      "poolTime": "6am - 10pm"
+    },
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2026 Soliga Hotel. All rights reserved."
+  },
+
+   "facilities": {
+    "label": "FASILITAS",
+    "title": "Fasilitas Pilihan untuk Kenyamanan Anda",
+    "description": "Kami menghadirkan fasilitas esensial yang dirancang untuk menunjang kenyamanan, mobilitas, dan pengalaman menginap Anda.",
+    "items": [
+      {
+        "title": "Trekking Hill",
+        "desc": "Jelajahi jalur trekking alami dengan pemandangan perbukitan yang menenangkan.",
+        "icon": "trekking"
+      },
+      {
+        "title": "Antar Jemput Bandara",
+        "desc": "Layanan transportasi bandara yang nyaman dan tepat waktu untuk perjalanan tanpa repot.",
+        "icon": "shuttle"
+      },
+      {
+        "title": "Resepsionis 24 Jam",
+        "desc": "Layanan resepsionis siap membantu kebutuhan Anda kapan pun, sepanjang hari.",
+        "icon": "reception"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "WELCOME TO SOLIGA HOTEL",
+    "title": "Where Luxury Meets Serenity",
+    "subtitle": "Escape to a world of unparalleled elegance. Nestled between pristine beaches and lush tropical gardens, Soliga Hotel offers an intimate retreat for the discerning traveler."
+  },
+  "restaurantMoments": {
+    "label": "DINING MOMENTS",
+    "title": "Moments at Soliga Dining",
+    "subtitle": "Experience the joy of refined flavors, warm atmospheres, and unforgettable dining moments with us."
+  }
+}

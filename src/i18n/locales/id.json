@@ -1,0 +1,114 @@
+{
+  "faq": {
+    "label": "INFORMASI TAMU",
+    "title": "Pertanyaan yang Sering Diajukan",
+    "items": [
+      {
+        "question": "Jam berapa waktu check-in dan check-out?",
+        "answer": "Waktu check-in dimulai pukul 14.00, sedangkan check-out hingga pukul 12.00. Permintaan check-in lebih awal atau check-out lebih lambat dapat diajukan sesuai ketersediaan."
+      },
+      {
+        "question": "Apakah tersedia layanan antar-jemput bandara?",
+        "answer": "Ya, Soliga Hotel menyediakan layanan antar-jemput bandara secara privat. Silakan hubungi concierge kami untuk pengaturan lebih lanjut."
+      },
+      {
+        "question": "Apakah sarapan sudah termasuk dalam harga kamar?",
+        "answer": "Ya, seluruh reservasi kamar sudah termasuk sarapan gourmet yang disajikan setiap pagi."
+      },
+      {
+        "question": "Apakah hewan peliharaan diperbolehkan menginap?",
+        "answer": "Demi kenyamanan seluruh tamu, Soliga Hotel tidak mengizinkan hewan peliharaan untuk menginap."
+      },
+      {
+        "question": "Fasilitas wellness apa saja yang tersedia?",
+        "answer": "Kami menyediakan spa mewah, pusat kebugaran, paviliun yoga, serta program wellness yang dirancang secara personal."
+      }
+    ]
+  },
+
+  "booking": {
+    "roomType": "Tipe Kamar",
+    "checkIn": "Check In",
+    "checkOut": "Check Out",
+    "rooms": "Jumlah Kamar",
+    "button": "Cek Ketersediaan",
+    "errorEmpty": "Mohon lengkapi semua data.",
+    "errorDate": "Tanggal check-out harus setelah check-in.",
+    "roomOptions": {
+      "deluxe": "Deluxe Room",
+      "executive": "Executive Room",
+      "suite": "Suite",
+      "family": "Family Room"
+    }
+  },
+
+  "footer": {
+    "description": "Di mana kemewahan bertemu ketenangan. Rasakan seni keramahan berkelas di destinasi eksklusif kami.",
+    "explore": {
+      "title": "Jelajahi",
+      "story": "Tentang Kami",
+      "accommodations": "Akomodasi",
+      "dining": "Kuliner",
+      "spa": "Spa & Wellness",
+      "experiences": "Pengalaman"
+    },
+    "contact": {
+      "title": "Kontak",
+      "address": {
+        "line1": "Jalan Pangeran Diponegoro No 432,",
+        "line2": " Kota Gunungsitoli, Pulau Nias, Sumatera Utara, Indonesia"
+      },
+      "phone": "+62 813-7029-1919",
+      "email": "hotelsoliganias@gmail.com"
+    },
+    "hours": {
+      "title": "Jam Operasional",
+      "reception": "Resepsionis",
+      "receptionTime": "24 Jam",
+      "restaurant": "Restoran",
+      "restaurantTime": "06.00 - 23.00",
+      "spa": "Spa",
+      "spaTime": "09.00 - 21.00",
+      "pool": "Kolam Renang",
+      "poolTime": "06.00 - 22.00"
+    },
+    "privacy": "Kebijakan Privasi",
+    "terms": "Syarat & Ketentuan",
+    "copyright": "© 2026 Soliga Hotel. Seluruh hak cipta dilindungi."
+  },
+  "facilities": {
+    "label": "FASILITAS",
+    "title": "Fasilitas Pilihan untuk Kenyamanan Anda",
+    "description": "Kami menghadirkan fasilitas esensial yang dirancang untuk menunjang kenyamanan, mobilitas, dan pengalaman menginap Anda.",
+    "items": [
+      {
+        "title": "Trekking Hill",
+        "desc": "Jelajahi jalur trekking alami dengan pemandangan perbukitan yang menenangkan.",
+        "icon": "trekking"
+      },
+      {
+        "title": "Antar Jemput Bandara",
+        "desc": "Layanan transportasi bandara yang nyaman dan tepat waktu untuk perjalanan tanpa repot.",
+        "icon": "shuttle"
+      },
+      {
+        "title": "Resepsionis 24 Jam",
+        "desc": "Layanan resepsionis siap membantu kebutuhan Anda kapan pun, sepanjang hari.",
+        "icon": "reception"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "SELAMAT DATANG DI HOTEL SOLIGA",
+    "title": "Di Mana Kemewahan Bertemu Ketenangan",
+    "subtitle": "Lepaskan diri ke dunia penuh keanggunan. Terletak di antara pantai yang masih alami dan taman tropis yang rimbun, Soliga Hotel menghadirkan tempat peristirahatan eksklusif bagi para pelancong berkelas."
+  },
+  "restaurantMoments": {
+    "label": "MOMEN BERSANTAP",
+    "title": "Pengalaman Kuliner di Soliga",
+    "subtitle": "Rasakan momen penuh cita rasa, kehangatan, dan kebahagiaan dalam setiap pengalaman bersantap bersama kami."
+  }
+
+
+
+}
