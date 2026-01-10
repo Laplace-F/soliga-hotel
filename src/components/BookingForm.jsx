@@ -44,9 +44,9 @@ Apakah kamar tersedia?
 Hello Soliga Hotel
 
 I would like to make a reservation with the following details:
-Room Type     : ${roomOptions[roomType]}
-Check-in      : ${checkIn}
-Check-out     : ${checkOut}
+Room Type       : ${roomOptions[roomType]}
+Check-in        : ${checkIn}
+Check-out       : ${checkOut}
 Number of Rooms : ${rooms}
 
 Is the room available?
@@ -60,88 +60,96 @@ Is the room available?
   }
 
   return (
-    <section className="relative z-10 px-4 sm:px-6 mb-24">
-      <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-2xl px-6 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-end">
+    <section
+      id="booking"
+      className="relative bg-white py-24 px-4 sm:px-6"
+    >
+      <div className="max-w-6xl mx-auto">
 
-          {/* ROOM TYPE */}
-          <div className="relative">
-            <select
-              value={roomType}
-              onChange={(e) => setRoomType(e.target.value)}
-              className="peer w-full border rounded-lg px-4 pt-6 pb-2 bg-white focus:outline-none focus:ring-2 focus:ring-slate-800"
+        {/* CARD */}
+ <div className="relative -mt-16 md:-mt-20 bg-white shadow-2xl rounded-2xl px-6 py-10">
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-end">
+
+            {/* ROOM TYPE */}
+            <div className="relative">
+              <select
+                value={roomType}
+                onChange={(e) => setRoomType(e.target.value)}
+                className="peer w-full border rounded-xl px-4 pt-6 pb-2 bg-white focus:outline-none focus:ring-2 focus:ring-slate-800"
+              >
+                {Object.entries(roomOptions).map(([key, label]) => (
+                  <option key={key} value={key}>
+                    {label}
+                  </option>
+                ))}
+              </select>
+              <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
+                {t("booking.roomType")}
+              </label>
+            </div>
+
+            {/* CHECK IN */}
+            <div className="relative">
+              <input
+                type="date"
+                value={checkIn}
+                onChange={(e) => {
+                  setCheckIn(e.target.value)
+                  setCheckOut("")
+                }}
+                className="peer w-full border rounded-xl px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
+              />
+              <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
+                {t("booking.checkIn")}
+              </label>
+            </div>
+
+            {/* CHECK OUT */}
+            <div className="relative">
+              <input
+                type="date"
+                value={checkOut}
+                min={checkIn}
+                onChange={(e) => setCheckOut(e.target.value)}
+                className="peer w-full border rounded-xl px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
+              />
+              <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
+                {t("booking.checkOut")}
+              </label>
+            </div>
+
+            {/* ROOMS */}
+            <div className="relative">
+              <input
+                type="number"
+                min="1"
+                value={rooms}
+                onChange={(e) => setRooms(e.target.value)}
+                className="peer w-full border rounded-xl px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
+              />
+              <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
+                {t("booking.rooms")}
+              </label>
+            </div>
+
+            {/* BUTTON */}
+            <button
+              onClick={handleSubmit}
+              className="w-full h-[52px] bg-slate-900 text-white rounded-xl font-medium tracking-wide hover:bg-slate-800 transition"
             >
-              {Object.entries(roomOptions).map(([key, label]) => (
-                <option key={key} value={key}>
-                  {label}
-                </option>
-              ))}
-            </select>
-            <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
-              {t("booking.roomType")}
-            </label>
+              {t("booking.button")}
+            </button>
           </div>
 
-          {/* CHECK IN */}
-          <div className="relative">
-            <input
-              type="date"
-              value={checkIn}
-              onChange={(e) => {
-                setCheckIn(e.target.value)
-                setCheckOut("")
-              }}
-              className="peer w-full border rounded-lg px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
-            />
-            <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
-              {t("booking.checkIn")}
-            </label>
-          </div>
-
-          {/* CHECK OUT */}
-          <div className="relative">
-            <input
-              type="date"
-              value={checkOut}
-              min={checkIn}
-              onChange={(e) => setCheckOut(e.target.value)}
-              className="peer w-full border rounded-lg px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
-            />
-            <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
-              {t("booking.checkOut")}
-            </label>
-          </div>
-
-          {/* ROOMS */}
-          <div className="relative">
-            <input
-              type="number"
-              min="1"
-              value={rooms}
-              onChange={(e) => setRooms(e.target.value)}
-              className="peer w-full border rounded-lg px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
-            />
-            <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
-              {t("booking.rooms")}
-            </label>
-          </div>
-
-          {/* BUTTON */}
-          <button
-            onClick={handleSubmit}
-            className="w-full md:w-auto h-[52px] bg-slate-900 text-white rounded-xl font-medium hover:bg-slate-800 transition"
-          >
-            {t("booking.button")}
-          </button>
-
+          {/* ERROR MESSAGE */}
+          {error && (
+            <p className="mt-6 text-sm text-red-600 text-center">
+              {error}
+            </p>
+          )}
         </div>
 
-        {/* ERROR MESSAGE */}
-        {error && (
-          <p className="mt-4 text-sm text-red-600 text-center">
-            {error}
-          </p>
-        )}
       </div>
     </section>
   )

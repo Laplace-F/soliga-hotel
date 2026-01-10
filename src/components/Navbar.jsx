@@ -1,20 +1,35 @@
 import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Link } from "react-router-dom"
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const { i18n } = useTranslation()
+ const { i18n } = useTranslation()
+
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" })
+      setMenuOpen(false)
+    }
+  }
+
+  const menuItemClass = `
+    relative cursor-pointer tracking-widest
+    after:content-[''] after:absolute after:left-0 after:-bottom-1
+    after:w-0 after:h-[1px] after:bg-current
+    after:transition-all after:duration-300
+    hover:after:w-full
+  `
 
   return (
     <nav
@@ -29,9 +44,11 @@ export default function Navbar() {
       `}
     >
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
         {/* LOGO */}
         <div
-          className={`font-serif tracking-wide transition-colors duration-500 ${
+          onClick={() => scrollToSection("hero")}
+          className={`font-serif tracking-wide cursor-pointer transition-colors duration-500 ${
             scrolled ? "text-slate-800" : "text-white"
           }`}
         >
@@ -41,14 +58,22 @@ export default function Navbar() {
 
         {/* DESKTOP MENU */}
         <ul
-          className={`hidden md:flex gap-10 text-sm tracking-widest transition-colors duration-500 ${
+          className={`hidden md:flex gap-10 text-sm transition-colors duration-500 ${
             scrolled ? "text-slate-700" : "text-white"
           }`}
         >
-          <li className="hover:opacity-70 cursor-pointer">HOME</li>
-          <li className="hover:opacity-70 cursor-pointer">ROOMS</li>
-          <li className="hover:opacity-70 cursor-pointer">BALLROOM</li>
-          <li className="hover:opacity-70 cursor-pointer">RESTAURANT</li>
+          <li className={menuItemClass} onClick={() => scrollToSection("hero")}>
+            HOME
+          </li>
+          <li className={menuItemClass} onClick={() => scrollToSection("rooms")}>
+            ROOMS
+          </li>
+          <li className={menuItemClass} onClick={() => scrollToSection("ballroom")}>
+            BALLROOM
+          </li>
+          <li className={menuItemClass} onClick={() => scrollToSection("restaurant")}>
+            RESTAURANT
+          </li>
         </ul>
 
         {/* RIGHT ACTION */}
@@ -63,9 +88,7 @@ export default function Navbar() {
             <button
               onClick={() => i18n.changeLanguage("id")}
               className={`hover:opacity-70 ${
-                i18n.language === "id"
-                  ? "font-bold underline underline-offset-4"
-                  : ""
+                i18n.language === "id" ? "font-bold underline underline-offset-4" : ""
               }`}
             >
               ID
@@ -74,9 +97,7 @@ export default function Navbar() {
             <button
               onClick={() => i18n.changeLanguage("en")}
               className={`hover:opacity-70 ${
-                i18n.language === "en"
-                  ? "font-bold underline underline-offset-4"
-                  : ""
+                i18n.language === "en" ? "font-bold underline underline-offset-4" : ""
               }`}
             >
               EN
@@ -85,6 +106,7 @@ export default function Navbar() {
 
           {/* BOOK NOW */}
           <button
+            onClick={() => scrollToSection("booking")}
             className={`px-5 py-2 border text-sm tracking-widest transition-all duration-500 ${
               scrolled
                 ? "border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white"
@@ -94,7 +116,7 @@ export default function Navbar() {
             BOOK NOW
           </button>
 
-          {/* BURGER (MOBILE) */}
+          {/* BURGER */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className={`md:hidden text-2xl transition-colors duration-500 ${
@@ -119,10 +141,10 @@ export default function Navbar() {
             scrolled ? "text-slate-800" : "text-white"
           }`}
         >
-          <li onClick={() => setMenuOpen(false)}>HOME</li>
-          <li onClick={() => setMenuOpen(false)}>ROOMS</li>
-          <li onClick={() => setMenuOpen(false)}>DINING</li>
-          <li onClick={() => setMenuOpen(false)}>SPA</li>
+          <li onClick={() => scrollToSection("hero")}>HOME</li>
+          <li onClick={() => scrollToSection("rooms")}>ROOMS</li>
+          <li onClick={() => scrollToSection("ballroom")}>BALLROOM</li>
+          <li onClick={() => scrollToSection("restaurant")}>RESTAURANT</li>
         </ul>
 
         {/* LANGUAGE SWITCH (MOBILE) */}
@@ -134,9 +156,7 @@ export default function Navbar() {
           <button
             onClick={() => i18n.changeLanguage("id")}
             className={`hover:opacity-70 ${
-              i18n.language === "id"
-                ? "font-bold underline underline-offset-4"
-                : ""
+              i18n.language === "id" ? "font-bold underline underline-offset-4" : ""
             }`}
           >
             ID
@@ -145,9 +165,7 @@ export default function Navbar() {
           <button
             onClick={() => i18n.changeLanguage("en")}
             className={`hover:opacity-70 ${
-              i18n.language === "en"
-                ? "font-bold underline underline-offset-4"
-                : ""
+              i18n.language === "en" ? "font-bold underline underline-offset-4" : ""
             }`}
           >
             EN

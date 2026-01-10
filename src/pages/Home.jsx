@@ -11,13 +11,16 @@ export default function Home() {
   
   return (
     <>
-      <Hero />
-
-      <BookingForm />
+     
+<section id="hero">
+  <Hero />
+</section>
+  <section id="booking">  <BookingForm /> </section>
+     
 
 
    {/* ROOMS SECTION */}
-      <section className="bg-[#fbfaf7] py-28 px-6">
+      <section id="rooms" className="bg-[#fbfaf7] py-28 px-6">
         <div className="max-w-7xl mx-auto">
 
       
@@ -70,7 +73,7 @@ export default function Home() {
       
            <Facilities />
 
-           <section className="bg-[#fbfaf7] py-28 px-6">
+           <section id="ballroom" className="bg-[#fbfaf7] py-28 px-6">
   <div className="max-w-7xl mx-auto">
 
     {/* SECTION HEADER */}
@@ -119,7 +122,7 @@ export default function Home() {
 
 
 
-<section className="bg-white py-28 px-6">
+<section id="restaurant" className="bg-white py-28 px-6">
 
 
       <RestaurantCard
