@@ -105,16 +105,19 @@ export default function Navbar() {
           </div>
 
           {/* BOOK NOW */}
-          <button
-            onClick={() => scrollToSection("booking")}
-            className={`px-5 py-2 border text-sm tracking-widest transition-all duration-500 ${
-              scrolled
-                ? "border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white"
-                : "border-white text-white hover:bg-white hover:text-slate-800"
-            }`}
-          >
-            BOOK NOW
-          </button>
+{/* BOOK NOW */}
+<a
+  href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20booking%20kamar"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`inline-block px-5 py-2 border text-sm tracking-widest transition-all duration-500 ${
+    scrolled
+      ? "border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white"
+      : "border-white text-white hover:bg-white hover:text-slate-800"
+  }`}
+>
+  BOOK NOW
+</a>
 
           {/* BURGER */}
           <button
