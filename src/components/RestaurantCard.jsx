@@ -2,21 +2,21 @@ import { useTranslation } from "react-i18next";
 
 const moments = [
   {
-    image: "/images/resto.JPG",
+    image: "/images/Home/resto.webp",
 
     tag: "@soligahotel",
   },
   {
-    image: "/images/resto2.JPG",
+    image: "/images/Home/resto2.webp",
 
     tag: "@soligarestaurant",
   },
   {
-    image: "/images/resto3.JPG",
+    image: "/images/Home/resto3.webp",
     tag: "@soligabar",
   },
   {
-    image: "/images/resto.JPG",
+    image: "/images/Home/resto.webp",
     tag: "@soligacafe",
   },
 ];

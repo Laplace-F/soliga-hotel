@@ -53,7 +53,7 @@ export default function Navbar() {
           }`}
         >
           <div className="text-2xl">Soliga</div>
-          <div className="text-xs tracking-widest font-sans">HOTEL</div>
+          <div className="text-xs tracking-widest font-sans">HOTEL & CONVENTION</div>
         </div>
 
         {/* DESKTOP MENU */}

@@ -45,7 +45,7 @@ export default function Home() {
               title="Deluxe Suite"
               price="$450"
               size="65 m²"
-              image="/images/room-deluxe.jpeg"
+              image="/images/Deluxe/Deluxe (7).webp"
               desc="Spacious elegance with panoramic garden views and a private terrace for morning contemplation."
             />
 
@@ -53,7 +53,7 @@ export default function Home() {
               title="Junior Suite"
               price="$890"
               size="120 m²"
-                image="/images/testt.JPG"
+                image="/images/JuniorSuite/JuniorSuite (6).webp"
               desc="Wake to the sound of waves in this beachfront sanctuary with direct ocean access and infinity pool."
             />
 
@@ -61,7 +61,7 @@ export default function Home() {
               title="Family Suite"
               price="Rp 5.000.000"
               size="45 m²"
-              image="/images/fam.JPG"
+              image="/images/FamilySuite/FS (1).webp"
               desc="An intimate retreat surrounded by tropical flora, perfect for romantic escapes and quiet reflection."
             />
           </div>
@@ -94,7 +94,7 @@ export default function Home() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
       <BallroomCard
         title="Grand Ballroom"
-        image="/images/hall.JPG"
+        image="/images/Home/hall.webp"
         size="500 m²"
         capacity="Up to 400 guests"
         desc="An elegant venue ideal for weddings, gala dinners, and grand celebrations."
@@ -102,7 +102,7 @@ export default function Home() {
 
       <BallroomCard
         title="Emerald Ballroom"
-        image="/images/hall2.JPG"
+        image="/images/Home/hall2.webp"
         size="300 m²"
         capacity="Up to 200 guests"
         desc="Perfect for corporate events, conferences, and sophisticated gatherings."
@@ -110,7 +110,7 @@ export default function Home() {
 
       <BallroomCard
         title="Garden Pavilion"
-        image="/images/hill.JPG"
+        image="/images/Home/hill.webp"
         size="250 m²"
         capacity="Up to 150 guests"
         desc="A charming space surrounded by lush greenery for intimate celebrations."
