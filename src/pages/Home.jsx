@@ -7,20 +7,21 @@ import BallroomCard from "../components/BallroomCard";
 
 import RestaurantCard from "../components/RestaurantCard";
 
-export default function Home() {
-  
-  return (
+export default function Home() { return (
     <>
-     
+
+{/* Hero */}
 <section id="hero">
   <Hero />
 </section>
-  <section id="booking">  <BookingForm /> </section>
+
+{/* BookingCard */}
+<section id="booking">
+    <BookingForm />
+ </section>
      
-
-
-   {/* ROOMS SECTION */}
-      <section id="rooms" className="bg-[#fbfaf7] py-28 px-6">
+{/* Kamar */}
+<section id="rooms" className="bg-[#fbfaf7] py-28 px-6">
         <div className="max-w-7xl mx-auto">
 
       
@@ -38,93 +39,85 @@ export default function Home() {
             </p>
           </div>
 
-
-          {/* ROOM GRID */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <RoomCard
-              title="Deluxe Suite"
-              price="$450"
-              size="65 m²"
-              image="/images/Deluxe/Deluxe (7).webp"
-              desc="Spacious elegance with panoramic garden views and a private terrace for morning contemplation."
-            />
-
-            <RoomCard
-              title="Junior Suite"
-              price="$890"
-              size="120 m²"
-                image="/images/JuniorSuite/JuniorSuite (6).webp"
-              desc="Wake to the sound of waves in this beachfront sanctuary with direct ocean access and infinity pool."
-            />
-
-            <RoomCard
-              title="Family Suite"
-              price="Rp 5.000.000"
-              size="45 m²"
-              image="/images/FamilySuite/FS (1).webp"
-              desc="An intimate retreat surrounded by tropical flora, perfect for romantic escapes and quiet reflection."
-            />
-          </div>
-
-        </div>
-      </section>
-
-
-      
-           <Facilities />
-
-           <section id="ballroom" className="bg-[#fbfaf7] py-28 px-6">
-  <div className="max-w-7xl mx-auto">
-
-    {/* SECTION HEADER */}
-    <div className="text-center max-w-2xl mx-auto mb-20">
-      <p className="text-sm tracking-[0.3em] text-hotel-accent mb-4">
-        EVENTS & CELEBRATIONS
-      </p>
-      <h2 className="font-serif text-4xl md:text-5xl text-[#1f3a34] mb-6">
-        Elegant Ballroom Venues
-      </h2>
-      <p className="text-gray-600 leading-relaxed">
-        Host unforgettable weddings, meetings, and celebrations in our
-        beautifully designed ballroom spaces.
-      </p>
+{/* ROOM SCROLL CONTAINER */}
+<div className="relative">
+  <div className="flex gap-8 overflow-x-auto scroll-smooth pb-4 scrollbar-hide">
+    
+    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
+      <RoomCard
+        title="Superior Room"
+        price="$220"
+        size="32 m²"
+        image="/images/Superior/Superior (1).webp"
+        desc="Comfortable elegance designed for restful stays with warm interior tones."
+      />
     </div>
 
-    {/* GRID */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-      <BallroomCard
-        title="Grand Ballroom"
-        image="/images/Home/hall.webp"
-        size="500 m²"
-        capacity="Up to 400 guests"
-        desc="An elegant venue ideal for weddings, gala dinners, and grand celebrations."
+    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
+      <RoomCard
+        title="Deluxe Room"
+        price="$320"
+        size="45 m²"
+        image="/images/Deluxe/Deluxe (7).webp"
+        desc="Refined comfort with enhanced space and serene garden views."
       />
+    </div>
 
-      <BallroomCard
-        title="Emerald Ballroom"
-        image="/images/Home/hall2.webp"
-        size="300 m²"
-        capacity="Up to 200 guests"
-        desc="Perfect for corporate events, conferences, and sophisticated gatherings."
+    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
+      <RoomCard
+        title="Junior Suite"
+        price="$450"
+        size="60 m²"
+        image="/images/JuniorSuite/JuniorSuite (6).webp"
+        desc="Spacious layout offering luxury amenities and elevated privacy."
       />
+    </div>
 
-      <BallroomCard
-        title="Garden Pavilion"
-        image="/images/Home/hill.webp"
-        size="250 m²"
-        capacity="Up to 150 guests"
-        desc="A charming space surrounded by lush greenery for intimate celebrations."
+    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
+      <RoomCard
+        title="Executive Suite"
+        price="$650"
+        size="85 m²"
+        image="/images/Executive/Executive (1).webp"
+        desc="Sophisticated ambiance tailored for business and leisure excellence."
+      />
+    </div>
+
+    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
+      <RoomCard
+        title="Grand Suite"
+        price="$950"
+        size="120 m²"
+        image="/images/GrandSuite/GS (1).webp"
+        desc="Opulent interiors and panoramic vistas for distinguished guests."
+      />
+    </div>
+
+    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
+      <RoomCard
+        title="Family Suite"
+        price="$780"
+        size="95 m²"
+        image="/images/FamilySuite/FS (1).webp"
+        desc="Generous space thoughtfully arranged for memorable family stays."
       />
     </div>
 
   </div>
+</div>
+
+        </div>
 </section>
 
+{/* Fasilitas */}
+ <Facilities />
 
 
-<section id="restaurant" className="bg-white py-28 px-6">
+{/* Ballroom ke notepad ballroom */}
 
 
+{/* Restoran */}
+  <section id="restaurant" className="bg-white py-28 px-6">
       <RestaurantCard
         title="Sunset Lounge"
         image="/images/restaurant-lounge.jpg"
@@ -132,10 +125,11 @@ export default function Home() {
         hours="Open Daily · 4 PM – 12 AM"
         desc="Relax with handcrafted cocktails and light gourmet bites in an intimate sunset setting."
       />
- 
+
 </section>
 
-            <FAQ />
+{/* FAQ */}
+ <FAQ />
     </>
   );
 }

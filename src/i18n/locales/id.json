@@ -35,10 +35,12 @@
     "errorEmpty": "Mohon lengkapi semua data.",
     "errorDate": "Tanggal check-out harus setelah check-in.",
     "roomOptions": {
-      "deluxe": "Deluxe Room",
-      "executive": "Executive Room",
-      "suite": "Suite",
-      "family": "Family Room"
+       "superior": "Superior",
+      "junior": "Junior Suite",
+      "deluxe": "Deluxe",
+      "executive": "Executive",
+      "suite": "Grand Suite",
+      "family": "Family Suite"
     }
   },
 

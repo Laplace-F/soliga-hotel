@@ -36,10 +36,12 @@
     "errorEmpty": "Please complete all required fields.",
     "errorDate": "Check-out date must be after check-in.",
     "roomOptions": {
+      "superior": "Superior",
+      "junior": "Junior Suite",
       "deluxe": "Deluxe Room",
-      "executive": "Executive Room",
-      "suite": "Suite",
-      "family": "Family Room"
+      "executive": "Executive",
+      "suite": "Grand Suite",
+      "family": "Family Suite"
     }
   },
   "footer": {

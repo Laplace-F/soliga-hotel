@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 export default function BookingForm() {
   const { t, i18n } = useTranslation()
 
-  const [roomType, setRoomType] = useState("deluxe")
+  const [roomType, setRoomType] = useState("executive")
   const [checkIn, setCheckIn] = useState("")
   const [checkOut, setCheckOut] = useState("")
   const [rooms, setRooms] = useState(1)
@@ -60,10 +60,18 @@ Is the room available?
   }
 
   return (
-    <section
-      id="booking"
-      className="relative bg-white py-24 px-4 sm:px-6"
-    >
+<section
+  id="booking"
+  className="relative py-24 px-4 sm:px-6 bg-[#fbfaf7] overflow-hidden"
+>
+  {/* BACKGROUND SVG */}
+  <div
+    className="absolute inset-0 bg-center bg-repeat opacity-[1] pointer-events-none"
+    style={{
+      backgroundImage: "url('/images/Home/Visiwig-Bricks.svg')",
+    }}
+  />
+
       <div className="max-w-6xl mx-auto">
 
         {/* CARD */}
