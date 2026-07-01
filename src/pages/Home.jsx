@@ -38,74 +38,108 @@ export default function Home() { return (
               offering comfort, privacy, and timeless elegance.
             </p>
           </div>
-
 {/* ROOM SCROLL CONTAINER */}
-<div className="relative">
-  <div className="flex gap-8 overflow-x-auto scroll-smooth pb-4 scrollbar-hide">
-    
-    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
-      <RoomCard
-        title="Superior Room"
-        price="$220"
-        size="32 m²"
-        image="/images/Superior/Superior (1).webp"
-        desc="Comfortable elegance designed for restful stays with warm interior tones."
-      />
-    </div>
+<div
+  ref={(el) => {
+    if (!el) return;
 
-    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
-      <RoomCard
-        title="Deluxe Room"
-        price="$320"
-        size="45 m²"
-        image="/images/Deluxe/Deluxe (7).webp"
-        desc="Refined comfort with enhanced space and serene garden views."
-      />
-    </div>
+    if (window.innerWidth < 768) {
+      setTimeout(() => {
+        el.scrollTo({
+          left: 35,
+          behavior: "smooth",
+        });
 
-    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
-      <RoomCard
-        title="Junior Suite"
-        price="$450"
-        size="60 m²"
-        image="/images/JuniorSuite/JuniorSuite (6).webp"
-        desc="Spacious layout offering luxury amenities and elevated privacy."
-      />
-    </div>
+        setTimeout(() => {
+          el.scrollTo({
+            left: 0,
+            behavior: "smooth",
+          });
+        }, 700);
+      }, 800);
+    }
+  }}
+  className="
+    flex
+    gap-6
+    md:gap-8
+    overflow-x-auto
+    scroll-smooth
+    snap-x
+    snap-mandatory
+    pb-4
+    scrollbar-hide
+    [-ms-overflow-style:none]
+    [scrollbar-width:none]
+    [&::-webkit-scrollbar]:hidden
+  "
+>
+  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
+    <RoomCard
+    slug="superior"
+      title="Superior Room"
+      price="Rp 2.000.000"
+      size="32 m²"
+      image="/images/Superior/Superior (1).webp"
+      desc="Comfortable elegance designed for restful stays with warm interior tones."
+    />
+  </div>
 
-    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
-      <RoomCard
-        title="Executive Suite"
-        price="$650"
-        size="85 m²"
-        image="/images/Executive/Executive (1).webp"
-        desc="Sophisticated ambiance tailored for business and leisure excellence."
-      />
-    </div>
+  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
+    <RoomCard
+    slug="deluxe"
+      title="Deluxe Room"
+      price="Rp 4.000.000"
+      size="45 m²"
+      image="/images/Deluxe/Deluxe (7).webp"
+      desc="Refined comfort with enhanced space and serene garden views."
+    />
+  </div>
 
-    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
-      <RoomCard
-        title="Grand Suite"
-        price="$950"
-        size="120 m²"
-        image="/images/GrandSuite/GS (1).webp"
-        desc="Opulent interiors and panoramic vistas for distinguished guests."
-      />
-    </div>
+  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
+    <RoomCard
+    slug="junior-suite"
+      title="Junior Suite"
+      price="Rp 6.000.000"
+      size="60 m²"
+      image="/images/JuniorSuite/JuniorSuite (6).webp"
+      desc="Spacious layout offering luxury amenities and elevated privacy."
+    />
+  </div>
 
-    <div className="min-w-[300px] md:min-w-[360px] lg:min-w-[380px]">
-      <RoomCard
-        title="Family Suite"
-        price="$780"
-        size="95 m²"
-        image="/images/FamilySuite/FS (1).webp"
-        desc="Generous space thoughtfully arranged for memorable family stays."
-      />
-    </div>
+  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
+    <RoomCard
+    slug="executive-suite"
+      title="Executive Suite"
+      price="Rp 8.000.000"
+      size="85 m²"
+      image="/images/Executive/Executive (1).webp"
+      desc="Sophisticated ambiance tailored for business and leisure excellence."
+    />
+  </div>
 
+  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
+    <RoomCard
+    slug="grand-suite"
+      title="Grand Suite"
+      price="Rp 9.000.000"
+      size="120 m²"
+      image="/images/GrandSuite/GS (1).webp"
+      desc="Opulent interiors and panoramic vistas for distinguished guests."
+    />
+  </div>
+
+  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px] pr-5">
+    <RoomCard
+    slug="family-suite"
+      title="Family Suite"
+      price="Rp 10.000.000"
+      size="95 m²"
+      image="/images/FamilySuite/FS (1).webp"
+      desc="Generous space thoughtfully arranged for memorable family stays."
+    />
   </div>
 </div>
-
         </div>
 </section>
 

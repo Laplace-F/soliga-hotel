@@ -16,49 +16,72 @@ function Facilities() {
   const facilities = t("facilities.items", { returnObjects: true });
 
   return (
-    <section className="bg-[#fbfaf7] py-28 px-6">
+    <section className="bg-[#fbfaf7] py-20 md:py-28 px-5 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
-        {/* SECTION HEADER */}
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <p className="text-sm tracking-[0.3em] text-hotel-accent mb-4">
+        {/* HEADER */}
+        <div className="max-w-3xl mx-auto text-center mb-16 md:mb-20">
+
+          <p className="uppercase tracking-[0.35em] text-xs md:text-sm text-hotel-accent font-medium mb-4">
             {t("facilities.label")}
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl text-[#1f3a34] mb-6">
+
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-[#1f3a34] leading-tight">
             {t("facilities.title")}
           </h2>
-          <p className="text-gray-600 leading-relaxed">
+
+          <p className="mt-6 text-gray-600 leading-8 text-base md:text-lg">
             {t("facilities.description")}
           </p>
+
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          {facilities.map((item, index) => {
-            const Icon = ICONS[item.icon];
 
-            return (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl p-12 text-center shadow-sm hover:shadow-xl transition duration-300"
-              >
-                {/* ICON */}
-                <div className="w-16 h-16 mx-auto mb-8 rounded-full bg-hotel-accent/10 flex items-center justify-center group-hover:bg-hotel-accent transition">
-                  <Icon className="w-8 h-8 text-hotel-accent group-hover:text-white transition" />
-                </div>
+<div className="grid grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-8">
 
-                {/* TITLE */}
-                <h3 className="font-serif text-xl text-[#1f3a34] mb-4 group-hover:text-hotel-accent transition">
-                  {item.title}
-                </h3>
+  {facilities.map((item, index) => {
+    const Icon = ICONS[item.icon];
 
-                {/* DESCRIPTION */}
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
+    return (
+      <div
+        key={index}
+        className="group relative h-full bg-white rounded-2xl md:rounded-3xl border border-gray-100
+        p-4 sm:p-5 md:p-8 lg:p-10
+        transition-all duration-500
+        hover:-translate-y-2 md:hover:-translate-y-3
+        hover:shadow-xl hover:border-hotel-accent/20 overflow-hidden"
+      >
+
+        {/* Accent */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-hotel-accent via-[#d4b06a] to-hotel-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+
+        {/* Icon */}
+        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 rounded-full bg-hotel-accent/10 flex items-center justify-center mx-auto mb-4 md:mb-8 transition-all duration-500 group-hover:bg-hotel-accent group-hover:scale-110">
+
+<Icon className="w-10 h-10 text-hotel-accent transition-all duration-500 group-hover:text-yellow-500" />
+
+        </div>
+
+        {/* Title */}
+        <h3 className="font-serif text-sm sm:text-base md:text-2xl text-[#1f3a34] text-center mb-2 md:mb-5 transition-colors group-hover:text-hotel-accent leading-snug">
+
+          {item.title}
+
+        </h3>
+
+        {/* Description */}
+        <p className="hidden md:block text-gray-600 leading-8 text-center text-[15px]">
+
+          {item.desc}
+
+        </p>
+
               </div>
+
             );
           })}
+
         </div>
 
       </div>

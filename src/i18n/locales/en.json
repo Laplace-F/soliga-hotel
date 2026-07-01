@@ -44,6 +44,8 @@
       "family": "Family Suite"
     }
   },
+
+
   "footer": {
     "description": "Where luxury meets serenity. Experience the art of refined hospitality in our world-class sanctuary.",
     "explore": {
@@ -79,6 +81,8 @@
     "copyright": "© 2026 Soliga Hotel. All rights reserved."
   },
 
+
+
    "facilities": {
     "label": "FASILITAS",
     "title": "Fasilitas Pilihan untuk Kenyamanan Anda",
@@ -101,11 +105,15 @@
       }
     ]
   },
+
+
   "hero": {
     "eyebrow": "WELCOME TO SOLIGA HOTEL",
     "title": "Where Luxury Meets Serenity",
-    "subtitle": "Setiap sudut Soliga Hotel dirancang dengan kehangatan material kayu dan harmoni alam perbukitan, menciptakan suasana yang menenangkan sekaligus eksklusif."
+    "subtitle": "Experience the warmth of handcrafted wooden architecture, breathtaking hillside views, and genuine hospitality designed to create unforgettable moments."
   },
+
+  
   "restaurantMoments": {
     "label": "DINING MOMENTS",
     "title": "Moments at Soliga Dining",

@@ -68,7 +68,7 @@ Is the room available?
   <div
     className="absolute inset-0 bg-center bg-repeat opacity-[1] pointer-events-none"
     style={{
-      backgroundImage: "url('/images/Home/Visiwig-Bricks.svg')",
+      backgroundImage: "url('/images/Home/Visiwig-Brifcks.svg')",
     }}
   />
 
