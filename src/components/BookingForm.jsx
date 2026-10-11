@@ -1,164 +1,35 @@
-import { useState } from "react"
-import { useTranslation } from "react-i18next"
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { rooms } from "../data/rooms";
 
-export default function BookingForm() {
-  const { t, i18n } = useTranslation()
-
-  const [roomType, setRoomType] = useState("executive")
-  const [checkIn, setCheckIn] = useState("")
-  const [checkOut, setCheckOut] = useState("")
-  const [rooms, setRooms] = useState(1)
-  const [error, setError] = useState("")
-
-  const roomOptions = t("booking.roomOptions", { returnObjects: true })
-
-  const handleSubmit = () => {
-    if (!checkIn || !checkOut || !rooms) {
-      setError(t("booking.errorEmpty"))
-      return
-    }
-
-    if (checkOut <= checkIn) {
-      setError(t("booking.errorDate"))
-      return
-    }
-
-    setError("")
-
-    const phoneNumber = "6282273316767"
-
-    const message =
-      i18n.language === "id"
-        ? `
-Halo Soliga Hotel
-
-Saya ingin melakukan booking dengan detail berikut:
-Tipe Kamar    : ${roomOptions[roomType]}
-Check-in      : ${checkIn}
-Check-out     : ${checkOut}
-Jumlah Kamar  : ${rooms}
-
-Apakah kamar tersedia?
-        `
-        : `
-Hello Soliga Hotel
-
-I would like to make a reservation with the following details:
-Room Type       : ${roomOptions[roomType]}
-Check-in        : ${checkIn}
-Check-out       : ${checkOut}
-Number of Rooms : ${rooms}
-
-Is the room available?
-        `
-
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-      message
-    )}`
-
-    window.open(whatsappURL, "_blank")
-  }
-
-  return (
-<section
-  id="booking"
-  className="relative py-24 px-4 sm:px-6 bg-[#fbfaf7] overflow-hidden"
->
-  {/* BACKGROUND SVG */}
-  <div
-    className="absolute inset-0 bg-center bg-repeat opacity-[1] pointer-events-none"
-    style={{
-      backgroundImage: "url('/images/Home/Visiwig-Brifcks.svg')",
-    }}
-  />
-
-      <div className="max-w-6xl mx-auto">
-
-        {/* CARD */}
- <div className="relative -mt-16 md:-mt-20 bg-white shadow-2xl rounded-2xl px-6 py-10">
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-end">
-
-            {/* ROOM TYPE */}
-            <div className="relative">
-              <select
-                value={roomType}
-                onChange={(e) => setRoomType(e.target.value)}
-                className="peer w-full border rounded-xl px-4 pt-6 pb-2 bg-white focus:outline-none focus:ring-2 focus:ring-slate-800"
-              >
-                {Object.entries(roomOptions).map(([key, label]) => (
-                  <option key={key} value={key}>
-                    {label}
-                  </option>
-                ))}
-              </select>
-              <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
-                {t("booking.roomType")}
-              </label>
-            </div>
-
-            {/* CHECK IN */}
-            <div className="relative">
-              <input
-                type="date"
-                value={checkIn}
-                onChange={(e) => {
-                  setCheckIn(e.target.value)
-                  setCheckOut("")
-                }}
-                className="peer w-full border rounded-xl px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
-              />
-              <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
-                {t("booking.checkIn")}
-              </label>
-            </div>
-
-            {/* CHECK OUT */}
-            <div className="relative">
-              <input
-                type="date"
-                value={checkOut}
-                min={checkIn}
-                onChange={(e) => setCheckOut(e.target.value)}
-                className="peer w-full border rounded-xl px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
-              />
-              <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
-                {t("booking.checkOut")}
-              </label>
-            </div>
-
-            {/* ROOMS */}
-            <div className="relative">
-              <input
-                type="number"
-                min="1"
-                value={rooms}
-                onChange={(e) => setRooms(e.target.value)}
-                className="peer w-full border rounded-xl px-4 pt-6 pb-2 focus:outline-none focus:ring-2 focus:ring-slate-800"
-              />
-              <label className="absolute left-4 top-2 text-xs text-slate-500 peer-focus:text-slate-800">
-                {t("booking.rooms")}
-              </label>
-            </div>
-
-            {/* BUTTON */}
-            <button
-              onClick={handleSubmit}
-              className="w-full h-[52px] bg-slate-900 text-white rounded-xl font-medium tracking-wide hover:bg-slate-800 transition"
-            >
-              {t("booking.button")}
-            </button>
-          </div>
-
-          {/* ERROR MESSAGE */}
-          {error && (
-            <p className="mt-6 text-sm text-red-600 text-center">
-              {error}
-            </p>
-          )}
-        </div>
-
-      </div>
-    </section>
-  )
+export default function BookingForm({ compact = false }) {
+  const { t, i18n } = useTranslation();
+  const [roomType, setRoomType] = useState("deluxe");
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
+  const [count, setCount] = useState("1");
+  const [error, setError] = useState("");
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  const submit = (event) => {
+    event.preventDefault();
+    if (!checkIn || !checkOut || !count || Number(count) < 1) return setError(t("booking.errorEmpty"));
+    if (checkIn < today || checkOut <= checkIn) return setError(t("booking.errorDate"));
+    setError("");
+    const roomName = rooms.find((room) => room.slug === roomType)?.title || roomType;
+    const details = `Room: ${roomName}\nCheck-in: ${checkIn}\nCheck-out: ${checkOut}\nRooms: ${count}`;
+    const greeting = i18n.language.startsWith("id") ? "Halo Hotel Soliga, saya ingin menanyakan ketersediaan kamar:" : "Hello Hotel Soliga, I would like to ask about room availability:";
+    window.open(`https://wa.me/6282273316767?text=${encodeURIComponent(`${greeting}\n${details}`)}`, "_blank", "noopener,noreferrer");
+  };
+  const field = "min-h-12 w-full border border-white/25 bg-white px-3 text-sm text-[#171416] placeholder:text-[#777177]";
+  return <form onSubmit={submit} className="w-full">
+    <div className={`grid gap-3 ${compact ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-5"}`}>
+      <label className="text-xs font-medium text-white/80">{t("booking.roomType")}<select className={`${field} mt-2`} value={roomType} onChange={(e) => setRoomType(e.target.value)}>{rooms.map((room) => <option key={room.slug} value={room.slug}>{room.title}</option>)}</select></label>
+      <label className="text-xs font-medium text-white/80">{t("booking.checkIn")}<input required type="date" min={today} value={checkIn} onChange={(e) => { setCheckIn(e.target.value); if (checkOut && checkOut <= e.target.value) setCheckOut(""); }} className={`${field} mt-2`} /></label>
+      <label className="text-xs font-medium text-white/80">{t("booking.checkOut")}<input required type="date" min={checkIn || today} value={checkOut} onChange={(e) => setCheckOut(e.target.value)} className={`${field} mt-2`} /></label>
+      <label className="text-xs font-medium text-white/80">{t("booking.rooms")}<input required type="number" min="1" max="20" value={count} onChange={(e) => setCount(e.target.value)} className={`${field} mt-2`} /></label>
+      <button type="submit" className={`${compact ? "sm:col-span-2 lg:col-span-4" : "md:col-span-5"} min-h-12 bg-white px-5 text-sm font-bold text-[#701f32] transition hover:bg-[#f2e9e8]`}>{t("booking.button")}</button>
+    </div>
+    <p aria-live="polite" role={error ? "alert" : undefined} className={`mt-3 min-h-5 text-sm ${error ? "text-white" : "text-white/60"}`}>{error || t("booking.helper")}</p>
+  </form>;
 }

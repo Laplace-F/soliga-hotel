@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">Soli, Hotel Soliga's welcoming sun mascot</title>
+  <g fill="#701f32">
+    <path d="M80 4 91 19 107 10 112 29 131 27 129 46 148 52 139 68 154 80 139 92 148 108 129 114 131 133 112 131 107 150 91 141 80 156 69 141 53 150 48 131 29 133 31 114 12 108 21 92 6 80 21 68 12 52 31 46 29 27 48 29 53 10 69 19Z"/>
+    <circle cx="80" cy="80" r="51" fill="#f8f6f4"/>
+  </g>
+  <path d="M56 66c4-6 10-6 14 0m20 0c4-6 10-6 14 0" fill="none" stroke="#171416" stroke-linecap="round" stroke-width="5"/>
+  <circle cx="63" cy="77" r="3" fill="#171416"/><circle cx="97" cy="77" r="3" fill="#171416"/>
+  <path d="M65 91c8 13 22 13 30 0" fill="none" stroke="#701f32" stroke-linecap="round" stroke-width="5"/>
+  <path d="M45 108c12-7 21-7 35 0 14-7 23-7 35 0" fill="none" stroke="#a84a5e" stroke-linecap="round" stroke-width="4"/>
+</svg>

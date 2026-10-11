@@ -1,116 +1,12 @@
 {
-  "faq": {
-    "label": "INFORMASI TAMU",
-    "title": "Pertanyaan yang Sering Diajukan",
-    "items": [
-      {
-        "question": "Jam berapa waktu check-in dan check-out?",
-        "answer": "Waktu check-in dimulai pukul 14.00, sedangkan check-out hingga pukul 12.00. Permintaan check-in lebih awal atau check-out lebih lambat dapat diajukan sesuai ketersediaan."
-      },
-      {
-        "question": "Apakah tersedia layanan antar-jemput bandara?",
-        "answer": "Ya, Soliga Hotel menyediakan layanan antar-jemput bandara secara privat. Silakan hubungi concierge kami untuk pengaturan lebih lanjut."
-      },
-      {
-        "question": "Apakah sarapan sudah termasuk dalam harga kamar?",
-        "answer": "Ya, seluruh reservasi kamar sudah termasuk sarapan gourmet yang disajikan setiap pagi."
-      },
-      {
-        "question": "Apakah hewan peliharaan diperbolehkan menginap?",
-        "answer": "Demi kenyamanan seluruh tamu, Soliga Hotel tidak mengizinkan hewan peliharaan untuk menginap."
-      },
-      {
-        "question": "Fasilitas wellness apa saja yang tersedia?",
-        "answer": "Kami menyediakan spa mewah, pusat kebugaran, paviliun yoga, serta program wellness yang dirancang secara personal."
-      }
-    ]
-  },
-
-  "booking": {
-    "roomType": "Tipe Kamar",
-    "checkIn": "Check In",
-    "checkOut": "Check Out",
-    "rooms": "Jumlah Kamar",
-    "button": "Cek Ketersediaan",
-    "errorEmpty": "Mohon lengkapi semua data.",
-    "errorDate": "Tanggal check-out harus setelah check-in.",
-    "roomOptions": {
-       "superior": "Superior",
-      "junior": "Junior Suite",
-      "deluxe": "Deluxe",
-      "executive": "Executive",
-      "suite": "Grand Suite",
-      "family": "Family Suite"
-    }
-  },
-
-  "footer": {
-    "description": "Temukan Ketenangan di Tengah Keindahan",
-    "explore": {
-      "title": "Jelajahi",
-      "story": "Tentang Kami",
-      "accommodations": "Akomodasi",
-      "dining": "Kuliner",
-      "spa": "Spa & Wellness",
-      "experiences": "Pengalaman"
-    },
-    "contact": {
-      "title": "Kontak",
-      "address": {
-        "line1": "Jalan Pangeran Diponegoro No 432,",
-        "line2": " Kota Gunungsitoli, Pulau Nias, Sumatera Utara, Indonesia"
-      },
-      "phone": "+62 813-7029-1919",
-      "email": "hotelsoliganias@gmail.com"
-    },
-    "hours": {
-      "title": "Jam Operasional",
-      "reception": "Resepsionis",
-      "receptionTime": "24 Jam",
-      "restaurant": "Restoran",
-      "restaurantTime": "06.00 - 23.00",
-      "spa": "Spa",
-      "spaTime": "09.00 - 21.00",
-      "pool": "Kolam Renang",
-      "poolTime": "06.00 - 22.00"
-    },
-    "privacy": "Kebijakan Privasi",
-    "terms": "Syarat & Ketentuan",
-    "copyright": "© 2026 Soliga Hotel. Seluruh hak cipta dilindungi."
-  },
-  "facilities": {
-    "label": "FASILITAS",
-    "title": "Fasilitas Pilihan untuk Kenyamanan Anda",
-    "description": "Kami menghadirkan fasilitas esensial yang dirancang untuk menunjang kenyamanan, mobilitas, dan pengalaman menginap Anda.",
-    "items": [
-      {
-        "title": "Trekking Hill",
-        "desc": "Jelajahi jalur trekking alami dengan pemandangan perbukitan yang menenangkan.",
-        "icon": "trekking"
-      },
-      {
-        "title": "Antar Jemput Bandara",
-        "desc": "Layanan transportasi bandara yang nyaman dan tepat waktu untuk perjalanan tanpa repot.",
-        "icon": "shuttle"
-      },
-      {
-        "title": "Resepsionis 24 Jam",
-        "desc": "Layanan resepsionis siap membantu kebutuhan Anda kapan pun, sepanjang hari.",
-        "icon": "reception"
-      }
-    ]
-  },
-  "hero": {
-    "eyebrow": "SELAMAT DATANG DI HOTEL SOLIGA",
-    "title": "Temukan Ketenangan di Tengah Keindahan",
-    "subtitle": "Nikmati pengalaman menginap dengan sentuhan arsitektur kayu, panorama perbukitan yang memukau, serta pelayanan hangat yang menghadirkan kenyamanan di setiap momen."
-  },
-  "restaurantMoments": {
-    "label": "MOMEN BERSANTAP",
-    "title": "Pengalaman Kuliner di Soliga",
-    "subtitle": "Rasakan momen penuh cita rasa, kehangatan, dan kebahagiaan dalam setiap pengalaman bersantap bersama kami."
-  }
-
-
-
+  "nav": { "label": "Navigasi utama", "story": "Tentang", "rooms": "Kamar", "facilities": "Fasilitas", "contact": "Kontak", "book": "Reservasi", "language": "Pilih bahasa", "openMenu": "Buka menu", "closeMenu": "Tutup menu" },
+  "hero": { "eyebrow": "SELAMAT DATANG DI HOTEL SOLIGA", "title": "Persinggahan hangat di Gunungsitoli", "subtitle": "Temukan ruang untuk beristirahat dan menikmati keramahan Soliga di Pulau Nias.", "imageAlt": "Hotel Soliga di Gunungsitoli", "roomsCta": "Jelajahi Kamar", "contactCta": "Hubungi Kami", "location": "Gunungsitoli · Pulau Nias", "scrollLabel": "Lihat tentang Hotel Soliga", "featuredRoom": "Lihat Kamar Deluxe" },
+  "story": { "eyebrow": "HOTEL SOLIGA · NIAS", "title": "Sambutan hangat di jantung Gunungsitoli.", "body": "Hotel Soliga berada di Jalan Pangeran Diponegoro, Gunungsitoli. Jelajahi pilihan kamar dan hubungi tim kami untuk menanyakan kebutuhan masa inap Anda.", "location": "Gunungsitoli, Pulau Nias, Sumatera Utara", "welcome": "Soli menyambut Anda di Hotel Soliga.", "photo1": "Ruang bersama Hotel Soliga", "photo2": "Area luar Hotel Soliga", "photo3": "Interior Hotel Soliga", "photo4": "Hotel Soliga" },
+  "rooms": { "eyebrow": "PILIHAN AKOMODASI", "title": "Temukan kamar yang sesuai.", "subtitle": "Lihat pilihan kamar Hotel Soliga. Hubungi kami untuk mengonfirmasi harga dan ketersediaan terkini.", "cardCopy": "Temukan ruang istirahat Anda di Hotel Soliga, Gunungsitoli.", "priceNote": "harga tercantum", "viewDetails": "Lihat Detail" },
+  "room": { "imageAlt": "{{room}} di Hotel Soliga", "back": "Kembali ke semua kamar", "eyebrow": "AKOMODASI HOTEL SOLIGA", "area": "Luas", "guests": "Tamu", "guestsValue": "{{count}} tamu", "bed": "Tempat tidur", "wifi": "Wi-Fi", "included": "Tersedia", "breakfast": "Sarapan termasuk", "deluxeNote": "{{breakfast}} · Check-in {{checkIn}} · Check-out {{checkOut}}.", "defaultDescription": "Lihat pilihan kamar ini dan hubungi tim kami untuk memastikan detail serta ketersediaannya.", "overview": "Tentang kamar", "askAvailability": "Tanyakan ketersediaan", "gallery": "GALERI", "galleryTitle": "Lihat suasana kamar", "galleryAlt": "{{room}}, foto {{number}}", "moreRooms": "Masih mencari kamar?", "moreRoomsCopy": "Lihat tipe kamar lain di Hotel Soliga.", "browseRooms": "Jelajahi Kamar" },
+  "booking": { "eyebrow": "RESERVASI LANGSUNG", "title": "Rencanakan masa inap Anda", "subtitle": "Kirim detail tanggal dan tipe kamar. Tim kami akan membantu mengonfirmasi ketersediaan melalui WhatsApp.", "roomType": "Tipe kamar", "checkIn": "Check-in", "checkOut": "Check-out", "rooms": "Jumlah kamar", "button": "Tanyakan Ketersediaan", "helper": "Permintaan Anda akan diteruskan ke WhatsApp untuk konfirmasi tim kami.", "errorEmpty": "Mohon lengkapi semua data dengan benar.", "errorDate": "Tanggal check-out harus setelah check-in dan tanggal check-in tidak boleh di masa lalu." },
+  "facilities": { "label": "FASILITAS", "title": "Dirancang untuk mendukung masa inap Anda", "description": "Informasi fasilitas yang tercantum di situs Hotel Soliga.", "items": [{ "title": "Trekking Hill", "desc": "Jelajahi area trekking yang tercantum sebagai bagian dari fasilitas hotel." }, { "title": "Antar-jemput bandara", "desc": "Tanyakan kepada tim hotel tentang pengaturan layanan antar-jemput bandara." }, { "title": "Resepsionis 24 jam", "desc": "Informasi hotel mencantumkan layanan resepsionis 24 jam." }] },
+  "faq": { "label": "INFORMASI TAMU", "title": "Pertanyaan umum", "items": [{ "question": "Di mana lokasi Hotel Soliga?", "answer": "Hotel Soliga beralamat di Jalan Pangeran Diponegoro No. 432, Gunungsitoli, Pulau Nias, Sumatera Utara." }, { "question": "Bagaimana cara menanyakan ketersediaan kamar?", "answer": "Pilih tanggal dan tipe kamar pada formulir reservasi. Detail permintaan akan dibuka di WhatsApp untuk diteruskan kepada tim hotel." }, { "question": "Bagaimana cara menghubungi Hotel Soliga?", "answer": "Hubungi tim melalui WhatsApp atau telepon. Rincian kontak tersedia di bagian bawah halaman." }] },
+  "errors": { "roomEyebrow": "AKOMODASI", "roomTitle": "Kamar tidak ditemukan", "title": "Halaman tidak ditemukan", "body": "Sepertinya halaman yang Anda cari tidak tersedia.", "home": "Kembali ke Beranda", "mascotAlt": "Soli, maskot Hotel Soliga" },
+  "footer": { "description": "Hotel Soliga · Gunungsitoli, Pulau Nias.", "explore": { "title": "Jelajahi" }, "contact": { "title": "Kontak", "address": { "line1": "Jalan Pangeran Diponegoro No. 432,", "line2": "Gunungsitoli, Pulau Nias, Sumatera Utara, Indonesia" }, "phone": "+62 813-7029-1919", "email": "hotelsoliganias@gmail.com" }, "copyright": "© 2026 Hotel Soliga. Seluruh hak cipta dilindungi.", "location": "Gunungsitoli · Nias · Indonesia" }
 }

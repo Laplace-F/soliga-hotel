@@ -1,169 +1,33 @@
+import { MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import Hero from "../components/Hero";
 import BookingForm from "../components/BookingForm";
 import RoomCard from "../components/RoomCard";
 import Facilities from "../components/Facilities";
 import FAQ from "../components/FAQ";
-import BallroomCard from "../components/BallroomCard";
+import { rooms } from "../data/rooms";
 
-import RestaurantCard from "../components/RestaurantCard";
-
-export default function Home() { return (
-    <>
-
-{/* Hero */}
-<section id="hero">
-  <Hero />
-</section>
-
-{/* BookingCard */}
-<section id="booking">
-    <BookingForm />
- </section>
-     
-{/* Kamar */}
-<section id="rooms" className="bg-[#fbfaf7] py-28 px-6">
-        <div className="max-w-7xl mx-auto">
-
-      
-          {/* SECTION HEADER */}
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <p className="text-sm tracking-[0.3em] text-hotel-accent mb-4">
-              ACCOMMODATIONS
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-[#1f3a34] mb-6">
-              Our Signature Rooms
-            </h2>
-            <p className="text-gray-600 leading-relaxed">
-              Discover refined spaces designed to elevate your stay, each
-              offering comfort, privacy, and timeless elegance.
-            </p>
-          </div>
-{/* ROOM SCROLL CONTAINER */}
-<div
-  ref={(el) => {
-    if (!el) return;
-
-    if (window.innerWidth < 768) {
-      setTimeout(() => {
-        el.scrollTo({
-          left: 35,
-          behavior: "smooth",
-        });
-
-        setTimeout(() => {
-          el.scrollTo({
-            left: 0,
-            behavior: "smooth",
-          });
-        }, 700);
-      }, 800);
-    }
-  }}
-  className="
-    flex
-    gap-6
-    md:gap-8
-    overflow-x-auto
-    scroll-smooth
-    snap-x
-    snap-mandatory
-    pb-4
-    scrollbar-hide
-    [-ms-overflow-style:none]
-    [scrollbar-width:none]
-    [&::-webkit-scrollbar]:hidden
-  "
->
-  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
-    <RoomCard
-    slug="superior"
-      title="Superior Room"
-      price="Rp 2.000.000"
-      size="32 m²"
-      image="/images/Superior/Superior (1).webp"
-      desc="Comfortable elegance designed for restful stays with warm interior tones."
-    />
-  </div>
-
-  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
-    <RoomCard
-    slug="deluxe"
-      title="Deluxe Room"
-      price="Rp 4.000.000"
-      size="45 m²"
-      image="/images/Deluxe/Deluxe (7).webp"
-      desc="Refined comfort with enhanced space and serene garden views."
-    />
-  </div>
-
-  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
-    <RoomCard
-    slug="junior-suite"
-      title="Junior Suite"
-      price="Rp 6.000.000"
-      size="60 m²"
-      image="/images/JuniorSuite/JuniorSuite (6).webp"
-      desc="Spacious layout offering luxury amenities and elevated privacy."
-    />
-  </div>
-
-  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
-    <RoomCard
-    slug="executive-suite"
-      title="Executive Suite"
-      price="Rp 8.000.000"
-      size="85 m²"
-      image="/images/Executive/Executive (1).webp"
-      desc="Sophisticated ambiance tailored for business and leisure excellence."
-    />
-  </div>
-
-  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px]">
-    <RoomCard
-    slug="grand-suite"
-      title="Grand Suite"
-      price="Rp 9.000.000"
-      size="120 m²"
-      image="/images/GrandSuite/GS (1).webp"
-      desc="Opulent interiors and panoramic vistas for distinguished guests."
-    />
-  </div>
-
-  <div className="snap-start min-w-[86%] sm:min-w-[340px] md:min-w-[360px] lg:min-w-[380px] pr-5">
-    <RoomCard
-    slug="family-suite"
-      title="Family Suite"
-      price="Rp 10.000.000"
-      size="95 m²"
-      image="/images/FamilySuite/FS (1).webp"
-      desc="Generous space thoughtfully arranged for memorable family stays."
-    />
-  </div>
-</div>
-        </div>
-</section>
-
-{/* Fasilitas */}
- <Facilities />
-
-
-{/* Ballroom ke notepad ballroom */}
-
-
-{/* Restoran */}
-  <section id="restaurant" className="bg-white py-28 px-6">
-      <RestaurantCard
-        title="Sunset Lounge"
-        image="/images/restaurant-lounge.jpg"
-        cuisine="Cocktails & Light Bites"
-        hours="Open Daily · 4 PM – 12 AM"
-        desc="Relax with handcrafted cocktails and light gourmet bites in an intimate sunset setting."
-      />
-
-</section>
-
-{/* FAQ */}
- <FAQ />
-    </>
-  );
+export default function Home() {
+  const { t } = useTranslation();
+  return <main>
+    <Hero />
+    <section id="story" className="bg-[#f8f6f4] px-6 py-20 md:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[.85fr_1.15fr] md:items-center md:gap-20">
+        <div><p className="mb-4 text-xs font-semibold uppercase tracking-[.28em] text-[#701f32]">{t("story.eyebrow")}</p><h2 className="font-display text-4xl leading-tight md:text-5xl">{t("story.title")}</h2></div>
+        <div className="border-l-2 border-[#701f32] pl-6 md:pl-8"><p className="text-lg leading-8 text-[#5f595e]">{t("story.body")}</p><p className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#701f32]"><MapPin size={17} />{t("story.location")}</p><div className="mt-6 flex items-center gap-3"><img src="/images/soli.svg" alt="" className="h-10 w-10"/><span className="text-sm text-[#777177]">{t("story.welcome")}</span></div></div>
+      </div>
+      <div className="mx-auto mt-14 grid max-w-7xl grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+        {["/images/Home/hall.webp", "/images/Home/hill.webp", "/images/Home/image.webp", "/images/Home/herorev.png"].map((image, index) => <img key={image} src={image} alt={t(`story.photo${index + 1}`)} loading="lazy" className={`h-44 w-full object-cover md:h-64 ${index === 1 || index === 3 ? "md:mt-8" : ""}`} />)}
+      </div>
+    </section>
+    <section id="rooms" className="bg-white px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-10 flex flex-col gap-4 md:mb-14 md:flex-row md:items-end md:justify-between"><div className="max-w-xl"><p className="mb-4 text-xs font-semibold uppercase tracking-[.28em] text-[#701f32]">{t("rooms.eyebrow")}</p><h2 className="font-display text-4xl leading-tight md:text-5xl">{t("rooms.title")}</h2></div><p className="max-w-md text-sm leading-6 text-[#777177]">{t("rooms.subtitle")}</p></div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{rooms.map((room) => <RoomCard key={room.slug} room={room} />)}</div>
+      </div>
+    </section>
+    <Facilities />
+    <section id="booking" className="bg-[#48121f] px-6 py-16 text-white md:py-20"><div className="mx-auto grid max-w-7xl gap-9 md:grid-cols-[.8fr_1.2fr] md:items-center"><div><p className="mb-3 text-xs font-semibold uppercase tracking-[.25em] text-white/60">{t("booking.eyebrow")}</p><h2 className="font-display text-4xl md:text-5xl">{t("booking.title")}</h2><p className="mt-4 max-w-md leading-7 text-white/75">{t("booking.subtitle")}</p></div><BookingForm compact /></div></section>
+    <FAQ />
+  </main>;
 }

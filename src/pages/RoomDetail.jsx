@@ -1,33 +1,20 @@
-import { useParams } from "react-router-dom";
+import { createElement, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import { ArrowLeft, ArrowUpRight, BedDouble, Users, Wifi, Maximize2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { rooms } from "../data/rooms";
 
-import HeroSection from "../components/room-detail/HeroSection";
-import Overview from "../components/room-detail/Overview";
-import Gallery from "../components/room-detail/Gallery";
-import Amenities from "../components/room-detail/Amenities";
-function RoomDetail() {
-
+export default function RoomDetail() {
   const { slug } = useParams();
-
+  const { t } = useTranslation();
   const room = rooms.find((item) => item.slug === slug);
-
-  if (!room) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        Room tidak ditemukan.
-      </div>
-    );
-  }
-
-  return (
-    <main className="bg-[#fbfaf7]">
-
-      <HeroSection room={room} />
-        <Overview room={room} />
-        <Gallery room={room} />
-        <Amenities room={room} />
-    </main>
-  );
+  useEffect(() => { document.title = room ? `${room.title} | Hotel Soliga` : `Room not found | Hotel Soliga`; }, [room]);
+  if (!room) return <main className="flex min-h-[70vh] flex-col items-center justify-center px-6 pt-24 text-center"><img src="/images/soli.svg" alt="" className="mb-5 h-20 w-20"/><p className="text-xs font-bold uppercase tracking-[.2em] text-[#701f32]">{t("errors.roomEyebrow")}</p><h1 className="mt-3 font-display text-4xl">{t("errors.roomTitle")}</h1><Link to="/" className="mt-6 bg-[#701f32] px-5 py-3 text-sm text-white">{t("errors.home")}</Link></main>;
+  const info = room.slug === "deluxe" ? [[Maximize2, t("room.area"), room.size], [Users, t("room.guests"), t("room.guestsValue", { count: room.guests })], [BedDouble, t("room.bed"), room.bed], [Wifi, t("room.wifi"), t("room.included")]] : [[Maximize2, t("room.area"), room.size]];
+  return <main className="pt-[76px]">
+    <section className="relative min-h-[530px] overflow-hidden bg-[#48121f] md:min-h-[650px]"><img src={room.image} alt={t("room.imageAlt", { room: room.title })} fetchPriority="high" className="absolute inset-0 h-full w-full object-cover"/><div className="absolute inset-0 bg-gradient-to-r from-[#171416]/75 via-[#171416]/30 to-transparent"/><div className="relative mx-auto flex min-h-[530px] max-w-7xl items-end px-6 pb-12 pt-16 text-white md:min-h-[650px] md:px-10 md:pb-16"><div className="max-w-2xl"><Link to="/#rooms" className="mb-8 inline-flex items-center gap-2 text-sm text-white/75 hover:text-white"><ArrowLeft size={16}/>{t("room.back")}</Link><p className="mb-4 text-xs uppercase tracking-[.25em] text-white/75">{t("room.eyebrow")}</p><h1 className="font-display text-5xl md:text-7xl">{room.title}</h1><p className="mt-5 max-w-lg leading-7 text-white/85">{t("room.defaultDescription")}</p><p className="mt-7 text-2xl font-semibold">{room.price}<span className="ml-2 text-sm font-normal text-white/70">{t("rooms.priceNote")}</span></p></div></div></section>
+    <section className="bg-[#f8f6f4] px-6 py-16 md:py-20"><div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_.8fr]"><div><p className="mb-4 text-xs font-bold uppercase tracking-[.25em] text-[#701f32]">{t("room.overview")}</p><h2 className="font-display text-4xl">{room.title}</h2><p className="mt-5 max-w-2xl leading-7 text-[#777177]">{t("room.defaultDescription")}</p><div className="mt-9 grid grid-cols-2 gap-px bg-black/10 sm:grid-cols-4">{info.map(([Icon, label, value]) => <div key={label} className="bg-white p-4 md:p-5">{createElement(Icon, { size: 19, className: "mb-5 text-[#701f32]" })}<span className="block text-xs text-[#777177]">{label}</span><span className="mt-1 block text-sm font-semibold">{value}</span></div>)}</div>{room.slug === "deluxe" && <p className="mt-5 text-sm leading-6 text-[#777177]">{t("room.deluxeNote", { breakfast: t("room.breakfast"), checkIn: room.checkIn, checkOut: room.checkOut })}</p>}</div><aside className="border border-black/10 bg-white p-6 md:p-8"><p className="text-xs font-bold uppercase tracking-[.2em] text-[#701f32]">{t("booking.eyebrow")}</p><h2 className="mt-3 font-display text-3xl">{t("booking.title")}</h2><p className="mt-3 text-sm leading-6 text-[#777177]">{t("booking.subtitle")}</p><a href={`https://wa.me/6282273316767?text=${encodeURIComponent(`Halo, saya ingin bertanya tentang ${room.title}`)}`} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 bg-[#701f32] px-5 py-3 text-sm font-semibold text-white hover:bg-[#48121f]">{t("room.askAvailability")} <ArrowUpRight size={16}/></a></aside></div></section>
+    <section className="bg-white px-6 py-16 md:py-20"><div className="mx-auto max-w-7xl"><p className="mb-3 text-xs font-bold uppercase tracking-[.25em] text-[#701f32]">{t("room.gallery")}</p><h2 className="mb-8 font-display text-4xl">{t("room.galleryTitle")}</h2><div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">{room.galleryImages.map((item, index) => <img key={item.src} src={item.src} alt={t("room.galleryAlt", { room: room.title, number: index + 1 })} loading="lazy" className={`h-44 w-full object-cover sm:h-64 md:h-72 ${index === 0 ? "col-span-2 md:col-span-2 md:row-span-2 md:h-full" : ""}`} />)}</div></div></section>
+    <section className="bg-[#48121f] px-6 py-14 text-white"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-5 sm:flex-row sm:items-center"><div><h2 className="font-display text-3xl">{t("room.moreRooms")}</h2><p className="mt-2 text-sm text-white/70">{t("room.moreRoomsCopy")}</p></div><Link to="/#rooms" className="border border-white/50 px-5 py-3 text-sm font-semibold hover:bg-white hover:text-[#48121f]">{t("room.browseRooms")} <ArrowUpRight size={15} className="inline"/></Link></div></section>
+  </main>;
 }
-
-export default RoomDetail;
