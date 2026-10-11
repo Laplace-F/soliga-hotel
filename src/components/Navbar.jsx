@@ -30,7 +30,7 @@ export default function Navbar() {
       <div className="hidden items-center gap-8 md:flex">
         {items.map(([id, key]) => <button key={id} onClick={() => jump(id)} className="group relative text-xs font-semibold uppercase tracking-[.14em] text-[#494348] transition hover:text-[#701f32]"><span>{t(key)}</span><span aria-hidden="true" className="absolute -bottom-2 left-0 h-px w-0 bg-[#701f32] transition-[width] duration-300 group-hover:w-full" /></button>)}
         <div className="flex items-center gap-2 border-l border-black/10 pl-5 text-xs" aria-label={t("nav.language")}>
-          {["id", "en"].map((lang) => <button key={lang} onClick={() => i18n.changeLanguage(lang)} aria-pressed={i18n.language.startsWith(lang)} className={`uppercase ${i18n.language.startsWith(lang) ? "font-bold text-[#701f32]" : "text-[#777177]"}`}>{lang}</button>)}
+          {["id", "en"].map((lang) => <button key={lang} onClick={() => i18n.changeLanguage(lang)} aria-pressed={i18n.language.startsWith(lang)} className={`uppercase ${i18n.language.startsWith(lang) ? "font-bold text-[#701f32]" : "text-[var(--muted)]"}`}>{lang}</button>)}
         </div>
         <a href={bookingUrl} target="_blank" rel="noreferrer" className="bg-[#701f32] px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#48121f]">{t("nav.book")}</a>
       </div>

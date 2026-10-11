@@ -45,6 +45,52 @@ export function ScrollProgress() {
   />;
 }
 
+const connectorStyles = {
+  hero: {
+    placement: "bottom-0 h-14 md:h-20",
+    layers: [
+      { fill: "var(--maroon-light)", opacity: 0.2, d: "M0 24 C220 62 410 4 670 26 C990 52 1160 62 1440 18 V100 H0Z" },
+      { fill: "var(--warm-white)", d: "M0 43 C250 78 420 24 700 42 C1020 61 1190 73 1440 37 V100 H0Z" },
+    ],
+  },
+  rooms: {
+    placement: "top-0 h-12 md:h-14",
+    layers: [
+      { fill: "var(--maroon-light)", opacity: 0.18, d: "M0 0 H1440 V38 C1190 53 1010 17 760 31 C490 48 248 55 0 32Z" },
+      { fill: "var(--surface-white)", d: "M0 0 H1440 V25 C1190 42 1010 7 760 20 C490 37 248 43 0 21Z" },
+    ],
+  },
+  faq: {
+    placement: "bottom-0 h-12 md:h-16",
+    layers: [
+      { fill: "var(--maroon-light)", opacity: 0.16, d: "M0 29 C240 7 460 52 720 31 C1010 8 1200 10 1440 37 V100 H0Z" },
+      { fill: "var(--surface-white)", d: "M0 41 C240 21 460 63 720 43 C1010 20 1200 22 1440 49 V100 H0Z" },
+    ],
+  },
+  reservation: {
+    placement: "top-0 h-12 md:h-14",
+    layers: [
+      { fill: "var(--maroon-light)", opacity: 0.2, d: "M0 0 H1440 V34 C1210 15 1030 53 780 34 C520 15 280 53 0 37Z" },
+      { fill: "var(--surface-white)", d: "M0 0 H1440 V22 C1210 7 1030 38 780 23 C520 8 280 42 0 25Z" },
+    ],
+  },
+  footer: {
+    placement: "top-0 h-12 md:h-16",
+    layers: [
+      { fill: "var(--maroon-light)", opacity: 0.22, d: "M0 0 H1440 V50 C1190 22 1020 65 740 43 C450 20 220 67 0 42Z" },
+      { fill: "var(--maroon)", opacity: 0.52, d: "M0 0 H1440 V30 C1200 10 1010 46 760 28 C500 11 260 49 0 29Z" },
+    ],
+  },
+};
+
+export function SectionConnector({ variant }) {
+  const connector = connectorStyles[variant];
+  if (!connector) return null;
+  return <svg aria-hidden="true" focusable="false" className={`pointer-events-none absolute inset-x-0 z-10 w-full ${connector.placement}`} viewBox="0 0 1440 100" preserveAspectRatio="none">
+    {connector.layers.map((layer, index) => <path key={index} d={layer.d} fill={layer.fill} opacity={layer.opacity ?? 1} />)}
+  </svg>;
+}
+
 export function ParallaxHeroImage({ target, alt }) {
   const reduceMotion = useReducedMotion();
   const [distance, setDistance] = useState(() => typeof window === "undefined" ? 0 : window.innerWidth < 768 ? 0 : window.innerWidth < 1024 ? 14 : 28);

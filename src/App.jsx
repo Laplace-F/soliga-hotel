@@ -10,7 +10,7 @@ import { ScrollProgress } from "./components/ScrollEffects";
 
 function NotFound() {
   const { t } = useTranslation();
-  return <main className="flex min-h-[75vh] flex-col items-center justify-center px-6 pt-24 text-center"><img src="/images/soli.svg" alt={t("errors.mascotAlt")} className="mb-5 h-24 w-24"/><p className="text-xs font-bold uppercase tracking-[.25em] text-[#701f32]">404</p><h1 className="mt-3 font-display text-4xl">{t("errors.title")}</h1><p className="mt-3 max-w-md text-[#777177]">{t("errors.body")}</p><Link to="/" className="mt-6 bg-[#701f32] px-6 py-3 text-sm font-semibold text-white">{t("errors.home")}</Link></main>;
+  return <main className="flex min-h-[75vh] flex-col items-center justify-center px-6 pt-24 text-center"><img src="/images/soli.svg" alt={t("errors.mascotAlt")} className="mb-5 h-24 w-24"/><p className="text-xs font-bold uppercase tracking-[.25em] text-[#701f32]">404</p><h1 className="mt-3 font-display text-4xl">{t("errors.title")}</h1><p className="mt-3 max-w-md text-[var(--muted)]">{t("errors.body")}</p><Link to="/" className="mt-6 bg-[#701f32] px-6 py-3 text-sm font-semibold text-white">{t("errors.home")}</Link></main>;
 }
 
 export default function App() {

@@ -5,7 +5,7 @@ import BookingForm from "../components/BookingForm";
 import RoomCard from "../components/RoomCard";
 import Facilities from "../components/Facilities";
 import FAQ from "../components/FAQ";
-import { Reveal } from "../components/ScrollEffects";
+import { Reveal, SectionConnector } from "../components/ScrollEffects";
 import { rooms } from "../data/rooms";
 
 const storyImages = [
@@ -29,7 +29,7 @@ export default function Home() {
         <Reveal delay={0.12} direction="right" className="border-l-2 border-[#701f32] pl-6 md:pl-8">
           <p className="text-lg leading-8 text-[#5f595e]">{t("story.body")}</p>
           <p className="mt-6 flex items-center gap-2 text-sm font-semibold text-[#701f32]"><MapPin size={17} />{t("story.location")}</p>
-          <div className="mt-6 flex items-center gap-3"><img src="/images/soli.svg" alt="" className="h-10 w-10 transition-transform duration-300 hover:rotate-6"/><span className="text-sm text-[#777177]">{t("story.welcome")}</span></div>
+          <div className="mt-6 flex items-center gap-3"><img src="/images/soli.svg" alt="" className="h-10 w-10 transition-transform duration-300 hover:rotate-6"/><span className="text-sm text-[var(--muted)]">{t("story.welcome")}</span></div>
         </Reveal>
       </div>
 
@@ -47,7 +47,7 @@ export default function Home() {
             <Reveal as="p" className="mb-4 text-xs font-semibold uppercase tracking-[.28em] text-[#701f32]">{t("rooms.eyebrow")}</Reveal>
             <Reveal as="h2" delay={0.08} className="font-display text-4xl leading-tight md:text-5xl">{t("rooms.title")}</Reveal>
           </div>
-          <Reveal as="p" delay={0.12} className="max-w-md text-sm leading-6 text-[#777177]">{t("rooms.subtitle")}</Reveal>
+          <Reveal as="p" delay={0.12} className="max-w-md text-sm leading-6 text-[var(--muted)]">{t("rooms.subtitle")}</Reveal>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {rooms.map((room, index) => <Reveal key={room.slug} effect="image" delay={(index % 3) * 0.09} amount={0.1}><RoomCard room={room} /></Reveal>)}
@@ -60,8 +60,8 @@ export default function Home() {
     <FAQ />
 
     <section id="booking" className="relative overflow-hidden bg-[#48121f] px-6 pb-16 pt-20 text-white md:pb-20 md:pt-24">
-      <svg aria-hidden="true" className="absolute inset-x-0 top-0 h-12 w-full text-white" viewBox="0 0 1440 64" preserveAspectRatio="none"><path fill="currentColor" d="M0 0h1440v16c-212 32-401 38-659 22C492 18 280 15 0 52V0Z"/></svg>
-      <div className="relative mx-auto grid max-w-7xl gap-9 md:grid-cols-[.8fr_1.2fr] md:items-center">
+      <SectionConnector variant="reservation" />
+      <div className="relative z-20 mx-auto grid max-w-7xl gap-9 md:grid-cols-[.8fr_1.2fr] md:items-center">
         <div>
           <Reveal as="p" className="mb-3 text-xs font-semibold uppercase tracking-[.25em] text-white/60">{t("booking.eyebrow")}</Reveal>
           <Reveal as="h2" delay={0.08} className="font-display text-4xl md:text-5xl">{t("booking.title")}</Reveal>

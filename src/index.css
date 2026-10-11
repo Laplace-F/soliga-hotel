@@ -10,9 +10,11 @@
   --maroon: #701f32;
   --maroon-dark: #48121f;
   --maroon-light: #a84a5e;
+  --surface-white: #ffffff;
   --warm-white: #f8f6f4;
   --ink: #171416;
-  --muted: #777177;
+  --muted: #706970;
+  --control-border: #8e868d;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
@@ -20,7 +22,7 @@ body { margin: 0; min-width: 320px; }
 button, input, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a { color: inherit; text-decoration: none; }
-button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid #a84a5e; outline-offset: 3px; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: 0 0 0 5px #701f32; }
 img { display: block; max-width: 100%; }
 .font-display { font-family: 'Playfair Display', Georgia, serif; }
 .scrollbar-hide { scrollbar-width: none; }

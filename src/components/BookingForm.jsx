@@ -21,7 +21,7 @@ export default function BookingForm({ compact = false }) {
     const greeting = i18n.language.startsWith("id") ? "Halo Hotel Soliga, saya ingin menanyakan ketersediaan kamar:" : "Hello Hotel Soliga, I would like to ask about room availability:";
     window.open(`https://wa.me/6282273316767?text=${encodeURIComponent(`${greeting}\n${details}`)}`, "_blank", "noopener,noreferrer");
   };
-  const field = "min-h-12 w-full border border-white/25 bg-white px-3 text-sm text-[#171416] placeholder:text-[#777177]";
+  const field = "min-h-12 w-full border border-[var(--control-border)] bg-white px-3 text-sm text-[#171416] placeholder:text-[var(--muted)]";
   return <form onSubmit={submit} className="w-full">
     <div className={`grid gap-3 ${compact ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-5"}`}>
       <label className="text-xs font-medium text-white/80">{t("booking.roomType")}<select className={`${field} mt-2`} value={roomType} onChange={(e) => setRoomType(e.target.value)}>{rooms.map((room) => <option key={room.slug} value={room.slug}>{room.title}</option>)}</select></label>
