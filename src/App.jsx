@@ -6,6 +6,7 @@ import RoomDetail from "./pages/RoomDetail";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
+import { ScrollProgress } from "./components/ScrollEffects";
 
 function NotFound() {
   const { t } = useTranslation();
@@ -20,5 +21,5 @@ export default function App() {
     document.documentElement.lang = i18n.language.startsWith("en") ? "en" : "id";
     if (location.pathname === "/") document.title = "Hotel Soliga | Gunungsitoli, Nias";
   }, [i18n.language, location.pathname]);
-  return <><Navbar/><Routes><Route path="/" element={<Home/>}/><Route path="/rooms/:slug" element={<RoomDetail/>}/><Route path="*" element={<NotFound/>}/></Routes><Footer/></>;
+  return <><ScrollProgress/><Navbar/><Routes><Route path="/" element={<Home/>}/><Route path="/rooms/:slug" element={<RoomDetail/>}/><Route path="*" element={<NotFound/>}/></Routes><Footer/></>;
 }
