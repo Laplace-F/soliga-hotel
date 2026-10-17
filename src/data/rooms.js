@@ -1,20 +1,78 @@
 const roomTypes = [
-  { slug: "superior", title: "Superior Room", price: "Rp 2.000.000", size: "32 m²", image: "/images/Superior/Superior (1).webp", gallery: 7 },
-  { slug: "deluxe", title: "Deluxe Room", price: "Rp 4.000.000", size: "45 m²", image: "/images/Deluxe/Deluxe (7).webp", gallery: 7, guests: "2", bed: "King Bed", wifi: true, breakfast: true, checkIn: "14:00", checkOut: "12:00" },
-  { slug: "junior-suite", title: "Junior Suite", price: "Rp 6.000.000", size: "60 m²", image: "/images/JuniorSuite/JuniorSuite (1).webp", gallery: 7 },
-  { slug: "executive-suite", title: "Executive Suite", price: "Rp 8.000.000", size: "85 m²", image: "/images/Executive/Executive (1).webp", gallery: 8 },
-  { slug: "grand-suite", title: "Grand Suite", price: "Rp 9.000.000", size: "120 m²", image: "/images/GrandSuite/GS (1).webp", gallery: 9 },
-  { slug: "family-suite", title: "Family Suite", price: "Rp 10.000.000", size: "95 m²", image: "/images/FamilySuite/FS (1).webp", gallery: 8 },
+  {
+    slug: "family-suite",
+    nameKey: "rooms.categories.familySuite",
+    price: 2_800_000,
+    guests: 4,
+    breakfastIncluded: true,
+    image: "/images/FamilySuite/FS (1).webp",
+    galleryFolder: "FamilySuite",
+    galleryPrefix: "FS",
+    gallery: 8,
+  },
+  {
+    slug: "grand-suite",
+    nameKey: "rooms.categories.grandSuite",
+    price: 1_800_000,
+    guests: 2,
+    breakfastIncluded: true,
+    image: "/images/GrandSuite/GS (6).webp",
+    galleryFolder: "GrandSuite",
+    galleryPrefix: "GS",
+    gallery: 9,
+  },
+  {
+    slug: "junior-suite",
+    nameKey: "rooms.categories.juniorSuite",
+    price: 680_000,
+    guests: 2,
+    breakfastIncluded: true,
+    image: "/images/JuniorSuite/JuniorSuite (6).webp",
+    galleryFolder: "JuniorSuite",
+    galleryPrefix: "JuniorSuite",
+    gallery: 7,
+  },
+  {
+    slug: "executive-suite",
+    nameKey: "rooms.categories.executive",
+    price: 580_000,
+    guests: 2,
+    breakfastIncluded: true,
+    image: "/images/Executive/Executive (1).webp",
+    galleryFolder: "Executive",
+    galleryPrefix: "Executive",
+    gallery: 8,
+  },
+  {
+    slug: "deluxe",
+    nameKey: "rooms.categories.deluxe",
+    price: 380_000,
+    guests: 2,
+    breakfastIncluded: true,
+    image: "/images/Deluxe/Deluxe (1).webp",
+    galleryFolder: "Deluxe",
+    galleryPrefix: "Deluxe",
+    gallery: 7,
+  },
+  {
+    slug: "superior",
+    nameKey: "rooms.categories.superior",
+    price: 285_000,
+    guests: 2,
+    breakfastIncluded: false,
+    image: "/images/Superior/Superior (6).webp",
+    galleryFolder: "Superior",
+    galleryPrefix: "Superior",
+    gallery: 7,
+  },
 ].map((room) => ({
   ...room,
-  shortDescription: "A comfortable place to pause during your stay in Gunungsitoli.",
-  description: "Explore this room and contact our team to confirm current availability and details.",
   galleryImages: Array.from({ length: room.gallery }, (_, index) => {
     const number = index + 1;
-    const path = room.slug === "grand-suite" ? `/images/GrandSuite/GS (${number}).webp`
-      : room.slug === "family-suite" ? `/images/FamilySuite/FS (${number}).webp`
-      : `/images/${room.slug === "junior-suite" ? "JuniorSuite" : room.slug === "executive-suite" ? "Executive" : room.title.split(" ")[0]}/${room.slug === "junior-suite" ? "JuniorSuite" : room.slug === "executive-suite" ? "Executive" : room.title.split(" ")[0]} (${number}).webp`;
-    return { src: path, alt: `${room.title}, photo ${number}` };
+    return {
+      src: `/images/${room.galleryFolder}/${room.galleryPrefix} (${number}).webp`,
+      alt: `Hotel Soliga room photo ${number}`,
+    };
   }),
 }));
 

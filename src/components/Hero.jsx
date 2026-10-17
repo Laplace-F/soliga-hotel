@@ -3,6 +3,7 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { ParallaxHeroImage, Reveal, SectionConnector } from "./ScrollEffects";
 import { scrollToSection } from "../utils/scrollToSection";
+import { whatsappUrl } from "../utils/whatsappUrl";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -17,7 +18,7 @@ export default function Hero() {
         <Reveal as="p" delay={0.16} className="mt-6 max-w-xl text-base leading-7 text-white md:text-lg">{t("hero.subtitle")}</Reveal>
         <Reveal delay={0.24} className="mt-9 flex flex-wrap gap-3">
           <button onClick={() => scrollToSection("rooms")} className="group inline-flex min-h-12 items-center gap-3 bg-[#701f32] px-6 text-sm font-semibold text-white transition hover:bg-[#a84a5e] hover:text-white active:scale-[.98] active:text-white focus-visible:text-white">{t("hero.roomsCta")} <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></button>
-          <a href="https://wa.me/6282273316767?text=Halo%20saya%20ingin%20bertanya%20tentang%20Hotel%20Soliga" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center border border-white/70 px-6 text-sm font-semibold text-white transition hover:bg-white hover:text-[#171416] active:scale-[.98]">{t("hero.contactCta")}</a>
+          <a href={whatsappUrl(t("hero.whatsappMessage"))} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center border border-white/70 px-6 text-sm font-semibold text-white transition hover:bg-white hover:text-[#171416] active:scale-[.98]">{t("hero.contactCta")}</a>
         </Reveal>
       </div>
       <Reveal as="div" delay={0.3} className="mt-16 flex items-center gap-3 text-xs uppercase tracking-[.2em] text-white"><span className="h-px w-10 bg-white" /> {t("hero.location")}</Reveal>

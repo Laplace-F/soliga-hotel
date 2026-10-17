@@ -4,8 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { scrollToSection } from "../utils/scrollToSection";
-
-const bookingUrl = "https://wa.me/6282273316767?text=Halo%20saya%20ingin%20booking%20kamar";
+import { whatsappUrl } from "../utils/whatsappUrl";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,6 +12,7 @@ export default function Navbar() {
   const reduceMotion = useReducedMotion();
   const location = useLocation();
   const home = location.pathname === "/";
+  const bookingUrl = whatsappUrl(t("booking.whatsappGreeting"));
   const close = () => setOpen(false);
   const jump = (id) => {
     close();
