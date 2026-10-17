@@ -6,7 +6,15 @@ export const hotelContact = {
 };
 
 export const hotelPolicies = {
-  checkIn: "15:00",
+  checkIn: "14:00",
   checkOut: "12:00",
   extraBedPrice: 200_000,
+  lateCheckOut: {
+    standardUntil: "12:00",
+    firstPeriodUntil: "13:00",
+    firstPeriodPercent: 25,
+    secondPeriodUntil: "18:00",
+    secondPeriodPercent: 50,
+    additionalNightAfter: "18:00",
+  },
 };

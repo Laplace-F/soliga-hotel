@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { rooms } from "../data/rooms";
+import { hotelPolicies } from "../data/hotel";
+import { formatPolicyTime } from "../utils/formatPolicyTime";
 import { whatsappUrl } from "../utils/whatsappUrl";
 
 export default function BookingForm({ compact = false }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [roomType, setRoomType] = useState("deluxe");
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
@@ -37,5 +39,6 @@ export default function BookingForm({ compact = false }) {
       <button type="submit" className={`${compact ? "sm:col-span-2 lg:col-span-4" : "md:col-span-5"} min-h-12 bg-white px-5 text-sm font-bold text-[#701f32] transition hover:bg-[#f2e9e8]`}>{t("booking.button")}</button>
     </div>
     <p aria-live="polite" role={error ? "alert" : undefined} className={`mt-3 min-h-5 text-sm ${error ? "text-white" : "text-white/60"}`}>{error || t("booking.helper")}</p>
+    <p className="mt-2 text-xs leading-5 text-white/75">{t("booking.policyTimes", { checkIn: formatPolicyTime(hotelPolicies.checkIn, i18n.language), checkOut: formatPolicyTime(hotelPolicies.checkOut, i18n.language) })}</p>
   </form>;
 }
