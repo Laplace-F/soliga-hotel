@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { ArrowDown, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ParallaxHeroImage, Reveal, SectionConnector } from "./ScrollEffects";
 import { scrollToSection } from "../utils/scrollToSection";
@@ -24,7 +23,6 @@ export default function Hero() {
       <Reveal as="div" delay={0.3} className="mt-16 flex items-center gap-3 text-xs uppercase tracking-[.2em] text-white"><span className="h-px w-10 bg-white" /> {t("hero.location")}</Reveal>
     </div>
     <button onClick={() => scrollToSection("story")} aria-label={t("hero.scrollLabel")} className="absolute bottom-8 right-8 z-20 hidden h-12 w-12 place-items-center border border-white/60 text-white transition hover:bg-white hover:text-[#171416] md:grid"><ArrowDown size={18} /></button>
-    <Link to="/rooms/deluxe" className="group absolute bottom-0 right-0 z-20 hidden bg-[#701f32] px-8 py-5 text-sm font-semibold text-white transition-colors hover:bg-[#a84a5e] md:block">{t("hero.featuredRoom")} <ArrowRight size={15} className="ml-2 inline transition-transform group-hover:translate-x-1" aria-hidden="true" /></Link>
     <SectionConnector variant="hero" />
   </section>;
 }

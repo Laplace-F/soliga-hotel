@@ -8,10 +8,16 @@ const directions = {
   none: {},
 };
 
-export function Reveal({ as = "div", children, className = "", delay = 0, direction = "up", effect = "move", amount = 0.16 }) {
+export function Reveal({ as = "div", children, className = "", delay = 0, direction = "up", effect = "move", amount = 0.05 }) {
   const reduceMotion = useReducedMotion();
+  const [revealFallback, setRevealFallback] = useState(false);
   const MotionTag = motion[as] || motion.div;
   const offset = directions[direction] || directions.up;
+  useEffect(() => {
+    if (reduceMotion) return;
+    const timeout = window.setTimeout(() => setRevealFallback(true), 1800);
+    return () => window.clearTimeout(timeout);
+  }, [reduceMotion]);
   const variants = {
     hidden: {
       opacity: reduceMotion ? 1 : 0,
@@ -32,7 +38,9 @@ export function Reveal({ as = "div", children, className = "", delay = 0, direct
     variants={variants}
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: false, amount, margin: "0px 0px -5% 0px" }}
+    animate={revealFallback ? "visible" : undefined}
+    onViewportEnter={() => setRevealFallback(true)}
+    viewport={{ once: true, amount, margin: "0px" }}
   >{children}</MotionTag>;
 }
 
@@ -72,6 +80,20 @@ const connectorStyles = {
     layers: [
       { fill: "var(--maroon-light)", opacity: 0.2, d: "M0 0 H1440 V34 C1210 15 1030 53 780 34 C520 15 280 53 0 37Z" },
       { fill: "var(--surface-white)", d: "M0 0 H1440 V22 C1210 7 1030 38 780 23 C520 8 280 42 0 25Z" },
+    ],
+  },
+  storyReservation: {
+    placement: "top-0 h-12 md:h-14",
+    layers: [
+      { fill: "var(--maroon-light)", opacity: 0.2, d: "M0 0 H1440 V34 C1210 15 1030 53 780 34 C520 15 280 53 0 37Z" },
+      { fill: "var(--warm-white)", d: "M0 0 H1440 V22 C1210 7 1030 38 780 23 C520 8 280 42 0 25Z" },
+    ],
+  },
+  reservationRooms: {
+    placement: "top-0 h-12 md:h-14",
+    layers: [
+      { fill: "var(--maroon-light)", opacity: 0.18, d: "M0 0 H1440 V38 C1190 53 1010 17 760 31 C490 48 248 55 0 32Z" },
+      { fill: "#48121f", d: "M0 0 H1440 V25 C1190 42 1010 7 760 20 C490 37 248 43 0 21Z" },
     ],
   },
   footer: {

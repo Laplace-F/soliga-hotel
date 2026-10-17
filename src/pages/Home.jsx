@@ -33,14 +33,27 @@ export default function Home() {
         </Reveal>
       </div>
 
-      <div className="relative z-10 mx-auto mt-14 -mb-10 grid max-w-7xl grid-cols-2 gap-3 md:-mb-16 md:grid-cols-4 md:gap-5">
+      <div className="relative z-10 mx-auto mt-14 grid max-w-7xl grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
         {storyImages.map((image, index) => <Reveal key={image} effect="image" delay={index * 0.08} className={`overflow-hidden ${index === 1 || index === 3 ? "md:mt-8" : ""}`}>
           <img src={image} alt={t(`story.photo${index + 1}`)} loading="lazy" className="h-44 w-full object-cover transition-transform duration-700 hover:scale-[1.035] md:h-64" />
         </Reveal>)}
       </div>
     </section>
 
-    <section id="rooms" className="bg-white px-6 pb-20 pt-32 md:pb-28 md:pt-36">
+    <section id="booking" className="relative overflow-hidden bg-[#48121f] px-6 pb-16 pt-20 text-white md:pb-20 md:pt-24">
+      <SectionConnector variant="storyReservation" />
+      <div className="relative z-20 mx-auto grid max-w-7xl gap-9 md:grid-cols-[.8fr_1.2fr] md:items-center">
+        <div>
+          <Reveal as="p" className="mb-3 text-xs font-semibold uppercase tracking-[.25em] text-white/60">{t("booking.eyebrow")}</Reveal>
+          <Reveal as="h2" delay={0.08} className="font-display text-4xl md:text-5xl">{t("booking.title")}</Reveal>
+          <Reveal as="p" delay={0.15} className="mt-4 max-w-md leading-7 text-white/75">{t("booking.subtitle")}</Reveal>
+        </div>
+        <Reveal delay={0.12}><BookingForm compact /></Reveal>
+      </div>
+    </section>
+
+    <section id="rooms" className="relative bg-white px-6 pb-20 pt-32 md:pb-28 md:pt-36">
+      <SectionConnector variant="reservationRooms" />
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 flex flex-col gap-4 md:mb-14 md:flex-row md:items-end md:justify-between">
           <div className="max-w-xl">
@@ -58,18 +71,6 @@ export default function Home() {
     <Facilities />
 
     <FAQ />
-
-    <section id="booking" className="relative overflow-hidden bg-[#48121f] px-6 pb-16 pt-20 text-white md:pb-20 md:pt-24">
-      <SectionConnector variant="reservation" />
-      <div className="relative z-20 mx-auto grid max-w-7xl gap-9 md:grid-cols-[.8fr_1.2fr] md:items-center">
-        <div>
-          <Reveal as="p" className="mb-3 text-xs font-semibold uppercase tracking-[.25em] text-white/60">{t("booking.eyebrow")}</Reveal>
-          <Reveal as="h2" delay={0.08} className="font-display text-4xl md:text-5xl">{t("booking.title")}</Reveal>
-          <Reveal as="p" delay={0.15} className="mt-4 max-w-md leading-7 text-white/75">{t("booking.subtitle")}</Reveal>
-        </div>
-        <Reveal delay={0.12}><BookingForm compact /></Reveal>
-      </div>
-    </section>
 
   </main>;
 }
