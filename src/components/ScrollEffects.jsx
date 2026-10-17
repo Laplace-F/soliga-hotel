@@ -75,6 +75,14 @@ const connectorStyles = {
       { fill: "var(--surface-white)", d: "M0 41 C240 21 460 63 720 43 C1010 20 1200 22 1440 49 V100 H0Z" },
     ],
   },
+  faqFooter: {
+    placement: "bottom-0 h-16 md:h-20",
+    layers: [
+      { fill: "var(--maroon-light)", opacity: 0.42, d: "M0 42 C190 28 330 8 520 20 C740 34 840 57 1040 48 C1210 40 1320 18 1440 28 V100 H0Z" },
+      { fill: "var(--maroon)", opacity: 0.88, d: "M0 58 C210 45 350 26 560 34 C770 43 900 62 1080 53 C1240 45 1340 33 1440 39 V100 H0Z" },
+      { fill: "var(--maroon-dark)", d: "M0 75 C200 62 380 47 580 51 C800 56 930 73 1110 66 C1260 60 1360 48 1440 52 V100 H0Z" },
+    ],
+  },
   reservation: {
     placement: "top-0 h-12 md:h-14",
     layers: [
@@ -94,13 +102,6 @@ const connectorStyles = {
     layers: [
       { fill: "var(--maroon-light)", opacity: 0.18, d: "M0 0 H1440 V38 C1190 53 1010 17 760 31 C490 48 248 55 0 32Z" },
       { fill: "#48121f", d: "M0 0 H1440 V25 C1190 42 1010 7 760 20 C490 37 248 43 0 21Z" },
-    ],
-  },
-  footer: {
-    placement: "top-0 h-12 md:h-16",
-    layers: [
-      { fill: "var(--maroon-light)", opacity: 0.22, d: "M0 0 H1440 V50 C1190 22 1020 65 740 43 C450 20 220 67 0 42Z" },
-      { fill: "var(--maroon)", opacity: 0.52, d: "M0 0 H1440 V30 C1200 10 1010 46 760 28 C500 11 260 49 0 29Z" },
     ],
   },
 };

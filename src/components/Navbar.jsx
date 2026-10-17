@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2 border-l border-black/10 pl-5 text-xs" aria-label={t("nav.language")}>
           {["id", "en"].map((lang) => <button key={lang} onClick={() => i18n.changeLanguage(lang)} aria-pressed={i18n.language.startsWith(lang)} className={`uppercase ${i18n.language.startsWith(lang) ? "font-bold text-[#701f32]" : "text-[var(--muted)]"}`}>{lang}</button>)}
         </div>
-        <a href={bookingUrl} target="_blank" rel="noreferrer" className="bg-[#701f32] px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#48121f]">{t("nav.book")}</a>
+        <a href={bookingUrl} target="_blank" rel="noreferrer" className="bg-[#701f32] px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-[#48121f] hover:text-white active:text-white focus-visible:text-white">{t("nav.book")}</a>
       </div>
       <button type="button" onClick={() => setOpen(!open)} className="grid h-11 w-11 place-items-center text-[#701f32] md:hidden" aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")} aria-expanded={open}>{open ? <X /> : <Menu />}</button>
     </nav>
@@ -44,7 +44,7 @@ export default function Navbar() {
       className: "border-t border-black/10 bg-white px-6 pb-6 pt-3 shadow-lg md:hidden",
     }, <div className="flex flex-col">
       {items.map(([id, key]) => <button key={id} onClick={() => jump(id)} className="border-b border-black/5 py-4 text-left text-sm font-semibold uppercase tracking-wider">{t(key)}</button>)}
-      <div className="flex items-center justify-between py-5"><div className="flex gap-4">{["id", "en"].map((lang) => <button key={lang} onClick={() => i18n.changeLanguage(lang)} aria-pressed={i18n.language.startsWith(lang)} className="uppercase">{lang}</button>)}</div><a onClick={close} href={bookingUrl} target="_blank" rel="noreferrer" className="bg-[#701f32] px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white">{t("nav.book")}</a></div>
+      <div className="flex items-center justify-between py-5"><div className="flex gap-4">{["id", "en"].map((lang) => <button key={lang} onClick={() => i18n.changeLanguage(lang)} aria-pressed={i18n.language.startsWith(lang)} className="uppercase">{lang}</button>)}</div><a onClick={close} href={bookingUrl} target="_blank" rel="noreferrer" className="bg-[#701f32] px-5 py-3 text-xs font-semibold uppercase tracking-widest text-white hover:text-white active:text-white focus-visible:text-white">{t("nav.book")}</a></div>
     </div>)}</AnimatePresence>
   </header>;
 }

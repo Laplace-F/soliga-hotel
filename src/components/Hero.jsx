@@ -16,7 +16,7 @@ export default function Hero() {
         <Reveal as="h1" delay={0.08} className="font-display max-w-2xl text-5xl leading-[1.08] md:text-7xl">{t("hero.title")}</Reveal>
         <Reveal as="p" delay={0.16} className="mt-6 max-w-xl text-base leading-7 text-white md:text-lg">{t("hero.subtitle")}</Reveal>
         <Reveal delay={0.24} className="mt-9 flex flex-wrap gap-3">
-          <button onClick={() => scrollToSection("rooms")} className="group inline-flex min-h-12 items-center gap-3 bg-[#701f32] px-6 text-sm font-semibold text-white transition hover:bg-[#a84a5e] active:scale-[.98]">{t("hero.roomsCta")} <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></button>
+          <button onClick={() => scrollToSection("rooms")} className="group inline-flex min-h-12 items-center gap-3 bg-[#701f32] px-6 text-sm font-semibold text-white transition hover:bg-[#a84a5e] hover:text-white active:scale-[.98] active:text-white focus-visible:text-white">{t("hero.roomsCta")} <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></button>
           <a href="https://wa.me/6282273316767?text=Halo%20saya%20ingin%20bertanya%20tentang%20Hotel%20Soliga" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center border border-white/70 px-6 text-sm font-semibold text-white transition hover:bg-white hover:text-[#171416] active:scale-[.98]">{t("hero.contactCta")}</a>
         </Reveal>
       </div>
