@@ -51,7 +51,7 @@ const roomTypes = [
     price: 380_000,
     guests: 2,
     breakfastIncluded: true,
-    image: "/images/Deluxe/Deluxe (1).webp",
+    image: "/images/Deluxe/Deluxe (6).webp",
     galleryFolder: "Deluxe",
     galleryPrefix: "Deluxe",
     gallery: 7,
