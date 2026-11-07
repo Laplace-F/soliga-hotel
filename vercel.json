@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/hotel-map",
+      "destination": "/index.html"
+    },
+    {
       "source": "/rooms/:slug",
       "destination": "/index.html"
     }
