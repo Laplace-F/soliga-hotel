@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Home from "./pages/Home";
 import RoomDetail from "./pages/RoomDetail";
-import HotelMapPage from "./pages/HotelMapPage";
+const HotelMapPage = lazy(() => import("./pages/HotelMapPage"));
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
@@ -22,5 +22,5 @@ export default function App() {
     document.documentElement.lang = i18n.language.startsWith("en") ? "en" : "id";
     if (location.pathname === "/") document.title = "Hotel Soliga | Gunungsitoli, Nias";
   }, [i18n.language, location.pathname]);
-  return <><ScrollProgress/><Navbar/><Routes><Route path="/" element={<Home/>}/><Route path="/hotel-map" element={<HotelMapPage/>}/><Route path="/rooms/:slug" element={<RoomDetail/>}/><Route path="*" element={<NotFound/>}/></Routes><Footer/></>;
+  return <><ScrollProgress/><Navbar/><Routes><Route path="/" element={<Home/>}/><Route path="/hotel-map" element={<Suspense fallback={<main className="min-h-[60vh]"/>}><HotelMapPage/></Suspense>}/><Route path="/rooms/:slug" element={<RoomDetail/>}/><Route path="*" element={<NotFound/>}/></Routes><Footer/></>;
 }
